@@ -1,0 +1,46 @@
+
+
+services:
+  db:
+    image: postgres:16
+    container_name: sublemacion_db
+    environment:
+      POSTGRES_DB: sublemacion_db
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password123
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+
+  web:
+    build: .
+    container_name: sublemacion_web
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      DB_NAME: sublemacion_db
+      DB_USER: admin
+      DB_PASSWORD: password123
+      DB_HOST: db
+      DB_PORT: 5432
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    depends_on:
+      - db    
+
+volumes:
+  postgres_data:
+
+
