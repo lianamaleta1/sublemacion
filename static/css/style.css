@@ -1,0 +1,82 @@
+body{
+font-family: Arial;
+background:#f8f9fa;
+}
+
+/* LOGO */
+
+.logo-blue{
+color:#1e63d6;
+}
+
+.logo-yellow{
+color:#ffc107;
+}
+
+/* HERO */
+
+.hero{
+background: linear-gradient(120deg,#1e63d6,#1550b3);
+color:white;
+padding:120px 0;
+}
+
+.hero h1{
+font-size:60px;
+font-weight:bold;
+}
+
+.amarillo{
+color:#ffc107;
+}
+
+.hero-btn{
+background:#ffc107;
+color:black;
+padding:12px 35px;
+border-radius:8px;
+margin-top:20px;
+}
+
+/* PRODUCTOS */
+
+.productos{
+padding:80px 0;
+}
+
+.producto-card{
+border:none;
+border-radius:12px;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.producto-card:hover{
+transform:translateY(-8px);
+}
+
+.precio{
+font-size:20px;
+font-weight:bold;
+color:#1e63d6;
+}
+
+.btn-carrito{
+background:#1e63d6;
+color:white;
+}
+
+/* CARRITO */
+
+.carrito-btn{
+background:#ffc107;
+}
+
+/* FOOTER */
+
+.footer{
+background:#1e63d6;
+color:white;
+padding:30px;
+margin-top:60px;
+}

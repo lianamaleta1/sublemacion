@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container text-center">
+
+<h1>
+Tazas & Pullovers
+<span class="amarillo">Personalizados</span>
+</h1>
+
+<p>
+Diseños exclusivos que expresan tu personalidad.
+</p>
+
+<a class="btn hero-btn">
+Ver Productos
+</a>
+
+</div>
+
+</section>
+
+<!-- PRODUCTOS -->
+
+<section class="productos">
+
+<div class="container">
+
+<h2 class="text-center mb-5">
+Nuestros Productos
+</h2>
+
+<div class="row">
+
+{% for producto in productos %}
+
+<div class="col-md-4 mb-4">
+
+<div class="card producto-card">
+
+<img src="{{ producto.imagen.url }}" class="card-img-top">
+
+<div class="card-body text-center">
+
+<h5>{{ producto.nombre }}</h5>
+
+<p class="precio">
+$ {{ producto.precio }}
+</p>
+
+<button class="btn btn-carrito"
+onclick="agregarCarrito('{{producto.nombre}}', {{producto.precio}})">
+Agregar al carrito
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</section>
+
+{% endblock %}
