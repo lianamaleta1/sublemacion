@@ -14,11 +14,11 @@ Tazas & Pullovers
 </h1>
 
 <p>
-Diseños exclusivos que expresan tu personalidad.
+Diseños exclusivos que expresan tu personalidad. Cada producto es único, como tú.
 </p>
 
 <a class="btn hero-btn">
-Ver Productos
+Personaliza el tuyo ahora
 </a>
 
 </div>
@@ -36,27 +36,30 @@ Nuestros Productos
 </h2>
 
 <div class="row">
+{% if productos %}
 
-{% for producto in productos %}
+        {% for producto in productos %}
 
-<div class="col-md-4 mb-4">
+        <div class="col-md-4 mb-4">
 
-<div class="card producto-card">
+        <div class="card producto-card">
 
-<img src="{{ producto.imagen.url }}" class="card-img-top">
+        {% if producto.foto %}
+        <img src="{{ producto.foto.url }}" class="card-img-top">
+        {% endif %}
 
-<div class="card-body text-center">
+        <div class="card-body text-center">
 
-<h5>{{ producto.nombre }}</h5>
+        <h5>{{ producto.nombre }}</h5>
 
-<p class="precio">
-$ {{ producto.precio }}
-</p>
+        <p class="precio">
+        $ {{ producto.precio }}
+        </p>
 
-<button class="btn btn-carrito"
-onclick="agregarCarrito('{{producto.nombre}}', {{producto.precio}})">
-Agregar al carrito
-</button>
+        <button class="btn btn-carrito"
+        onclick="agregarCarrito('{{producto.nombre}}', '{{producto.precio}}')">
+        Agregar al carrito
+        </button>
 
 </div>
 
@@ -65,7 +68,17 @@ Agregar al carrito
 </div>
 
 {% endfor %}
+{% else %}
 
+        <div class="row">
+            <div class="col-md-4">
+                <div class="alert alert-secondary alert-dismissible fade show" role="alert">
+                    No hay resultados
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+{% endif %}
 </div>
 
 </div>

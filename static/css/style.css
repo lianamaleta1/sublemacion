@@ -1,3 +1,22 @@
+/* NAVBAR */
+
+.navbar{
+background: white;
+transition: all 0.3s ease;
+}
+.navbar-scroll{
+
+background: rgba(255,255,255,0.75);
+
+backdrop-filter: blur(8px);
+
+box-shadow:0 5px 20px rgba(0,0,0,0.15);
+
+}
+.navbar-scroll .navbar-brand{
+color:#1e63d6;
+}
+
 body{
 font-family: Arial;
 background:#f8f9fa;
@@ -64,6 +83,11 @@ color:#1e63d6;
 .btn-carrito{
 background:#1e63d6;
 color:white;
+}
+
+.card-img-top{
+height:220px;
+object-fit:cover;
 }
 
 /* CARRITO */

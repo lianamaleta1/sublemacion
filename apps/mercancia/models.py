@@ -40,9 +40,20 @@ class Producto(models.Model):
     precio = models.IntegerField()  # IntegerField does not accept max_length
     categoria = models.CharField(max_length=5, choices=choice_categoria)
     tipo = models.CharField(max_length=5, choices=choice_tipo)
-    foto = models.ImageField(upload_to='productos/', blank=True, null=True)
+    descripcion = models.TextField(null=True, blank=True)
     creado = models.DateTimeField(auto_now_add=True)
+    rating = models.IntegerField(default=5)
     pedido_id = models.ForeignKey(Pedido, on_delete=models.CASCADE)
+
+class ProductoImagen(models.Model):
+
+    producto = models.ForeignKey(
+        Producto,
+        on_delete=models.CASCADE,
+        related_name="imagenes"
+    )
+
+    imagen = models.ImageField(upload_to="productos/")
 
     def __str__(self):
         return self.nombre
