@@ -45,6 +45,10 @@ class Producto(models.Model):
     rating = models.IntegerField(default=5)
     pedido_id = models.ForeignKey(Pedido, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.nombre
+    
+    
 class ProductoImagen(models.Model):
 
     producto = models.ForeignKey(
@@ -55,8 +59,8 @@ class ProductoImagen(models.Model):
 
     imagen = models.ImageField(upload_to="productos/")
 
-    def __str__(self):
-        return self.nombre
+    """ def __str__(self):
+        return self.nombre"""
 
 class Usuario(models.Model): 
     pedido = models.ForeignKey(Pedido,on_delete=models.CASCADE)

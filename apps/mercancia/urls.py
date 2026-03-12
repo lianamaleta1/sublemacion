@@ -1,6 +1,8 @@
-from .views import listarProductos
+from .views import *
 from django.urls import path
 
 urlpatterns = [
     path('listar/',listarProductos,name='listar_productos'),
+    path('tazas/',vistaTazas,name='vistaTazas'),
+    path('pullover/',vistaPullover,name='vistaPullover'),
 ]
