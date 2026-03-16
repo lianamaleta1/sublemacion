@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+
 
 # Create your models here.
 
@@ -10,6 +12,7 @@ class Pedido(models.Model):
         ("L", "Listo"),
         ("D", "Demorado"),
     )
+    #usuario=models.ForeignKey(User, on_delete=models.CASCADE)
     numero_pedido = models.IntegerField()
     detalle = models.CharField(max_length=30, blank=True)
     # estado is a string choice, so use CharField
@@ -19,6 +22,8 @@ class Pedido(models.Model):
     
     def __str__(self):
         return f"Pedido {self.numero_pedido} – {self.get_estado_display()}"
+    
+
 
     class Meta:
         ordering = ['numero_pedido']
@@ -69,4 +74,23 @@ class Usuario(models.Model):
     direccion = models.CharField(max_length=30)
     
     
-    
+class PedidoItem(models.Model):
+
+    pedido = models.ForeignKey(
+        Pedido,
+        on_delete=models.CASCADE,
+        related_name="items"
+    )
+
+    producto = models.ForeignKey(
+        Producto,
+        on_delete=models.CASCADE
+    )
+
+    cantidad = models.PositiveIntegerField(default=1)
+
+    def subtotal(self):
+        return self.producto.precio * self.cantidad
+
+    def __str__(self):
+        return f"{self.producto.nombre} x {self.cantidad}"    
