@@ -1,20 +1,45 @@
-from django.shortcuts import render
-from .models import Producto
+from django.shortcuts import render, redirect,get_object_or_404
+from .models import Producto, Pedido, PedidoItem
 from django.core.paginator import Paginator
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 def listarProductos(request):
 
-    productos= Producto.objects.all()
+    productos = Producto.objects.all()
+    pedido = Pedido.objects.filter(
+        usuario=request.user,
+        estado="R"
+    ).first()
 
-    paginator = Paginator(productos, 12)
+    carrito = {}
+    total_items = 0
 
-    page_number = request.GET.get("page")#que hace esta linea 
+    if pedido:
+        for item in pedido.items.all():
+            carrito[item.producto.id] = item.cantidad
 
-    productos = paginator.get_page(page_number)
+        total_items = pedido.items.count()
 
 
-    return render(request,'mercancia/list_product.html',{'productos':productos,})
+    return render(request,'mercancia/list_product.html',{'productos':productos, 'carrito':carrito, 'total_items':total_items})
+
+def vistaBasecarrito(request):
+    pedido = Pedido.objects.filter(
+        usuario=request.user,
+        estado="R"
+    ).first()
+
+    carrito = {}
+    total_items = 0
+
+    if pedido:
+        for item in pedido.items.all():
+            carrito[item.producto.id] = item.cantidad
+
+        total_items = pedido.items.count()
+    return render(request,'base.html', {'total_items':total_items})
 
 def vistaTazas(request):
     tazas=Producto.objects.filter(categoria='J')
@@ -26,3 +51,59 @@ def vistaPullover(request):
     pullover=Producto.objects.filter(categoria='P')
 
     return render(request,'mercancia/pullover.html',{'pullover':pullover})
+
+def agregar_carrito(request, producto_id):
+
+    producto = get_object_or_404(Producto, id=producto_id)
+
+    pedido, creado = Pedido.objects.get_or_create(
+        usuario=request.user,
+        estado="R"
+    )
+
+    item, creado = PedidoItem.objects.get_or_create(
+        pedido=pedido,
+        producto=producto
+    )
+
+    if not creado:
+        item.cantidad += 1
+        item.save()
+
+    return redirect("listar_productos")
+
+def verCarrito(request):
+    pedido= Pedido.objects.filter(usuario=request.user, estado="R").first()
+    items=pedido.items.all() if pedido else []
+    total=sum(item.subtotal() for item in items)
+
+    return render(request, "mercancia/carrito.html",{"items":items,"total":total})
+
+@csrf_exempt
+def agregar_carrito_ajax(request):
+
+    if request.method == "POST":
+
+        producto_id = request.POST.get("producto_id")
+        producto = Producto.objects.get(id=producto_id)
+
+        pedido, _ = Pedido.objects.get_or_create(
+            usuario=request.user,
+            estado="R"
+        )
+
+        item, creado = PedidoItem.objects.get_or_create(
+            pedido=pedido,
+            producto=producto
+        )
+
+        if not creado:
+            item.cantidad += 1
+            item.save()
+
+        total_items = pedido.items.count()
+
+        return JsonResponse({
+            "success": True,
+            "total_items": total_items
+        })

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+{% if items %}
+{% for item in items %}
+
+<div>
+
+<h5>{{ item.producto.nombre }}</h5>
+
+<p>Cantidad: {{ item.cantidad }}</p>
+
+<p>Precio: {{ item.producto.precio }}</p>
+
+<p>Subtotal: {{ item.subtotal }}</p>
+
+</div>
+
+{% endfor %}
+<h3>Total: {{ total }}</h3>
+{% else %}
+ <h3>Total: No hay nada</h3>
+{% endif %}
+
+{% endblock %}

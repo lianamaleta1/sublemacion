@@ -1,11 +1,32 @@
-
-let carrito = {}
+let carrito={}
 
 function agregarProducto(id){
 
-carrito[id] = 1
+    carrito[id] = 1
+    renderCantidad(id)
 
-renderCantidad(id)
+    fetch("/ajax/agregar-carrito/", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "X-CSRFToken": getCookie("csrftoken")
+        },
+        body: "producto_id=" + id
+    })
+    .then(res => res.json())
+    .then(data => {
+
+        if(data.success){
+
+            let contador = document.getElementById("cart-count")
+
+            if(contador){
+                contador.innerText = data.total_items
+            }
+
+        }
+
+    })
 
 }
 
@@ -29,24 +50,46 @@ contenedor.innerHTML = `
 
 }
 
-function cambiarCantidad(id,valor){
+function cambiarCantidad(id, valor){
 
-carrito[id] += valor
+    carrito[id] += valor
 
-if(carrito[id] <= 0){
+    fetch("/ajax/agregar-carrito/", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "X-CSRFToken": getCookie("csrftoken")
+        },
+        body: "producto_id=" + id
+    })
 
-delete carrito[id]
+    if(carrito[id] <= 0){
 
-document.getElementById("carrito-"+id).innerHTML=
+        delete carrito[id]
 
-`<button class="btn btn-carrito"
-onclick="agregarProducto(${id})">
-🛒 Añadir a la cesta
-</button>`
+        document.getElementById("carrito-"+id).innerHTML=
+        `<button class="btn btn-carrito"
+        onclick="agregarProducto(${id})">
+        🛒 Añadir a la cesta
+        </button>`
 
-return
+        return
+    }
+
+    document.getElementById("cantidad-"+id).innerText=carrito[id]
+
 }
 
-document.getElementById("cantidad-"+id).innerText=carrito[id]
 
+
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        document.cookie.split(';').forEach(cookie => {
+            if (cookie.trim().startsWith(name + '=')) {
+                cookieValue = cookie.trim().substring(name.length + 1);
+            }
+        });
+    }
+    return cookieValue;
 }

@@ -39,22 +39,25 @@ href="{% static 'css/all.min.css' %}">
 <ul class="navbar-nav mx-auto">
 
 <li class="nav-item">
-<a class="nav-link" href="#">Productos</a>
+<a class="nav-link" href="{% url 'listar_productos' %}">Productos</a>
 </li>
 
 <li class="nav-item">
-<a class="nav-link" href="#">Tazas</a>
+<a class="nav-link" href="{% url 'vistaTazas' %}">Tazas</a>
 </li>
 
 <li class="nav-item">
-<a class="nav-link" href="#">Pullovers</a>
+<a class="nav-link" href="{% url 'vistaPullover' %}">Pullovers</a>
 </li>
 
 </ul>
 
-<button class="btn carrito-btn">
-🛒 <span id="contador-carrito">0</span>
-</button>
+
+
+<a href="{% url 'verCarrito' %}" class="btn btn-warning">
+    🛒 <span id="cart-count">{{ total_items }}</span>
+</a>
+
 
 </div>
 
