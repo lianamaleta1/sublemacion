@@ -118,8 +118,6 @@ onclick="agregarProducto('{{producto.id}}')">
 
 </button>
 
-
-
 </div>
 
 
@@ -204,5 +202,14 @@ Siguiente
 </nav>
 
 </div>
+<script id="data-carrito" type="application/json">
+{{ carrito|safe }}
+</script>
+
+<script>
+const URL_AGREGAR_CARRITO = "{% url 'agregar_carrito_ajax' %}";
+</script>
+
+
 
 {% endblock %}

@@ -23,7 +23,7 @@ def listarProductos(request):
         total_items = pedido.items.count()
 
 
-    return render(request,'mercancia/list_product.html',{'productos':productos, 'carrito':carrito, 'total_items':total_items})
+    return render(request,'mercancia/list_product.html',{'productos':productos, 'carrito':json.dumps(carrito), 'total_items':total_items})
 
 def vistaBasecarrito(request):
     pedido = Pedido.objects.filter(
@@ -79,11 +79,17 @@ def verCarrito(request):
 
     return render(request, "mercancia/carrito.html",{"items":items,"total":total})
 
+
+
+import json
+  
 @csrf_exempt
 def agregar_carrito_ajax(request):
 
-    if request.method == "POST":
+    print("Antes del if")
 
+    if request.method == "POST":
+        print("entor al if")
         producto_id = request.POST.get("producto_id")
         producto = Producto.objects.get(id=producto_id)
 
@@ -91,7 +97,8 @@ def agregar_carrito_ajax(request):
             usuario=request.user,
             estado="R"
         )
-
+        
+        
         item, creado = PedidoItem.objects.get_or_create(
             pedido=pedido,
             producto=producto
@@ -107,3 +114,4 @@ def agregar_carrito_ajax(request):
             "success": True,
             "total_items": total_items
         })
+    print("salio al if")

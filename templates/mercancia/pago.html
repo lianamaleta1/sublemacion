@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Total: {{ total }} ₽</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <select name="metodo_pago">
+        <option value="rusia">Tarjeta Rusia</option>
+        <option value="internacional">Tarjeta Internacional</option>
+    </select>
+
+    <button type="submit" class="btn btn-success">
+        Pagar
+    </button>
+
+</form>
+
+{% endblock %}

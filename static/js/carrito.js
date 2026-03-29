@@ -1,32 +1,45 @@
-let carrito={}
+let carrito = {}
 
+const data = document.getElementById("data-carrito")
+
+if(data){
+    carrito = JSON.parse(data.textContent)
+}
+
+ 
 function agregarProducto(id){
-
+    
     carrito[id] = 1
+
     renderCantidad(id)
-
-    fetch("/ajax/agregar-carrito/", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-            "X-CSRFToken": getCookie("csrftoken")
-        },
-        body: "producto_id=" + id
+   
+   fetch(URL_AGREGAR_CARRITO, {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+        "X-CSRFToken": getCookie("csrftoken")
+    },
+    body: JSON.stringify({
+        producto_id: id,
+        cantidad: 1
     })
-    .then(res => res.json())
-    .then(data => {
+})
+.then(res => res.json())
+.then(data => {
 
-        if(data.success){
+    if(data.success){
 
-            let contador = document.getElementById("cart-count")
+        let contador = document.getElementById("cart-count")
 
-            if(contador){
-                contador.innerText = data.total_items
-            }
-
+        if(contador){
+            contador.innerText = data.total_items
         }
 
-    })
+    } else {
+        console.log("Error:", data.error)
+    }
+
+})
 
 }
 
@@ -60,7 +73,7 @@ function cambiarCantidad(id, valor){
             "Content-Type": "application/x-www-form-urlencoded",
             "X-CSRFToken": getCookie("csrftoken")
         },
-        body: "producto_id=" + id
+        body: "producto_id=" + id + "&cantidad=" + valor  // 👈 AQUÍ
     })
 
     if(carrito[id] <= 0){
@@ -68,9 +81,9 @@ function cambiarCantidad(id, valor){
         delete carrito[id]
 
         document.getElementById("carrito-"+id).innerHTML=
-        `<button class="btn btn-carrito"
+        `<button class="btn btn-warning"
         onclick="agregarProducto(${id})">
-        🛒 Añadir a la cesta
+        🛒 Añadir
         </button>`
 
         return
@@ -92,4 +105,16 @@ function getCookie(name) {
         });
     }
     return cookieValue;
+}
+
+window.onload = function(){
+
+    for(let id in carrito){
+
+        renderCantidad(id)
+
+        document.getElementById("cantidad-"+id).innerText = carrito[id]
+
+    }
+
 }
