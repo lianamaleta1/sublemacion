@@ -94,6 +94,18 @@ function cambiarCantidad(id, valor){
 }
 
 
+function vistaBasecarrito() {
+    fetch(URL_BASE_CARRITO)
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById('carrito-contador').innerText = data.total_items;
+    })
+    .catch(error => console.error("Error:", error));
+}
+document.addEventListener("DOMContentLoaded", function() {
+    vistaBasecarrito();
+});
+console.log(URL_BASE_CARRITO);
 
 function getCookie(name) {
     let cookieValue = null;

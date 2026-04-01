@@ -31,15 +31,16 @@ def vistaBasecarrito(request):
         estado="R"
     ).first()
 
-    carrito = {}
     total_items = 0
 
     if pedido:
-        for item in pedido.items.all():
-            carrito[item.producto.id] = item.cantidad
+        total_items = sum(item.cantidad for item in pedido.items.all())
+    
 
-        total_items = pedido.items.count()
-    return render(request,'base.html', {'total_items':total_items})
+    return JsonResponse({
+            "success": True,
+            "total_items": total_items
+        })
 
 def vistaTazas(request):
     tazas=Producto.objects.filter(categoria='J')
@@ -78,7 +79,6 @@ def verCarrito(request):
     total=sum(item.subtotal() for item in items)
 
     return render(request, "mercancia/carrito.html",{"items":items,"total":total})
-
 
 
 import json

@@ -53,10 +53,10 @@ href="{% static 'css/all.min.css' %}">
 </ul>
 
 
-
 <a href="{% url 'verCarrito' %}" class="btn btn-warning">
-    🛒 <span id="cart-count">{{ total_items }}</span>
+    🛒 <span id="carrito-contador">0</span>
 </a>
+
 
 </div>
 
@@ -107,6 +107,10 @@ href="{% static 'css/all.min.css' %}">
 <script src="{% static 'js/carrito.js' %}"></script>
 <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 <script src="{% static 'js/main.js' %}"></script>
+
+<script>
+const URL_BASE_CARRITO = "{% url 'vistaBasecarrito' %}";
+</script>
 
 </body>
 </html>
