@@ -13,7 +13,7 @@ function agregarProducto(id){
 
     renderCantidad(id)
    
-   fetch(URL_AGREGAR_CARRITO, {
+   fetch("/ajax/agregar-carrito/", {
     method: "POST",
     headers: {
         "Content-Type": "application/json",
@@ -27,20 +27,20 @@ function agregarProducto(id){
 .then(res => res.json())
 .then(data => {
 
-    if(data.success){
+     if (data.success) {
+        const contador = document.getElementById('carrito-contador');
+        contador.innerText = data.total_items;
 
-        let contador = document.getElementById("cart-count")
-
-        if(contador){
-            contador.innerText = data.total_items
-        }
-
-    } else {
-        console.log("Error:", data.error)
+        contador.style.transform = "scale(1.3)";
+        setTimeout(() => {
+            contador.style.transform = "scale(1)";
+        }, 200);
     }
 
-})
 
+}) 
+.catch(error => console.error("Error:", error));
+    
 }
 
 function renderCantidad(id){
@@ -62,6 +62,8 @@ contenedor.innerHTML = `
 `
 
 }
+
+
 
 function cambiarCantidad(id, valor){
 
@@ -95,7 +97,7 @@ function cambiarCantidad(id, valor){
 
 
 function vistaBasecarrito() {
-    fetch(URL_BASE_CARRITO)
+    fetch("/vistaBasecarrito/")
     .then(res => res.json())
     .then(data => {
         document.getElementById('carrito-contador').innerText = data.total_items;
@@ -105,7 +107,7 @@ function vistaBasecarrito() {
 document.addEventListener("DOMContentLoaded", function() {
     vistaBasecarrito();
 });
-console.log(URL_BASE_CARRITO);
+
 
 function getCookie(name) {
     let cookieValue = null;
@@ -130,3 +132,13 @@ window.onload = function(){
     }
 
 }
+document.querySelectorAll(".btn-agregar").forEach(btn => {
+    btn.addEventListener("click", function() {
+        const id = this.dataset.id;
+        agregarProducto(id);
+    });
+});
+
+window.agregarProducto = agregarProducto;
+window.cambiarCantidad = cambiarCantidad;
+window.vistaBasecarrito = vistaBasecarrito;

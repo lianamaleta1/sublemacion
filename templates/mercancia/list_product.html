@@ -111,12 +111,7 @@ ${{producto.precio}}
 
 <div id="carrito-{{producto.id}}">
 
-<button class="btn btn-carrito"
-onclick="agregarProducto('{{producto.id}}')">
-
-🛒 Añadir a la cesta
-
-</button>
+<button class="btn-agregar" data-id="{{ producto.id }}"> 🛒 Añadir a la cesta </button>
 
 </div>
 

@@ -9,7 +9,7 @@ def listarProductos(request):
 
     productos = Producto.objects.all()
     pedido = Pedido.objects.filter(
-        usuario=request.user,
+        #usuario=request.user,
         estado="R"
     ).first()
 
@@ -74,7 +74,7 @@ def agregar_carrito(request, producto_id):
     return redirect("listar_productos")
 
 def verCarrito(request):
-    pedido= Pedido.objects.filter(usuario=request.user, estado="R").first()
+    pedido= Pedido.objects.filter(estado="R").first()
     items=pedido.items.all() if pedido else []
     total=sum(item.subtotal() for item in items)
 
@@ -83,35 +83,32 @@ def verCarrito(request):
 
 import json
   
-@csrf_exempt
 def agregar_carrito_ajax(request):
-
-    print("Antes del if")
-
     if request.method == "POST":
-        print("entor al if")
         producto_id = request.POST.get("producto_id")
-        producto = Producto.objects.get(id=producto_id)
 
         pedido, _ = Pedido.objects.get_or_create(
             usuario=request.user,
             estado="R"
         )
-        
-        
+
         item, creado = PedidoItem.objects.get_or_create(
             pedido=pedido,
-            producto=producto
+            producto_id=producto_id
         )
 
         if not creado:
             item.cantidad += 1
-            item.save()
+        else:
+            item.cantidad = 1
 
-        total_items = pedido.items.count()
+        item.save()
+
+        # 🔥 calcular total actualizado
+        total_items = sum(i.cantidad for i in pedido.items.all())
 
         return JsonResponse({
             "success": True,
             "total_items": total_items
         })
-    print("salio al if")
+   
