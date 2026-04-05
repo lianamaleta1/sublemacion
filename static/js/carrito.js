@@ -6,42 +6,64 @@ if(data){
     carrito = JSON.parse(data.textContent)
 }
 
+function actualizarContador(totalItems) {
+    const contador = document.getElementById("carrito-contador");
+    if (!contador) return;
+
+    contador.innerText = totalItems;
+    contador.style.transform = "scale(1.3)";
+    setTimeout(() => {
+        contador.style.transform = "scale(1)";
+    }, 200);
+}
+
  
 function agregarProducto(id){
     
-    carrito[id] = 1
+        carrito[id] = 1
 
-    renderCantidad(id)
+        renderCantidad(id)
    
-   fetch("/ajax/agregar-carrito/", {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json",
-        "X-CSRFToken": getCookie("csrftoken")
-    },
-    body: JSON.stringify({
-        producto_id: id,
-        cantidad: 1
-    })
-})
-.then(res => res.json())
-.then(data => {
+        fetch("/ajax/agregar-carrito/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRFToken": getCookie("csrftoken")
+            },
+            body: JSON.stringify({
+                producto_id: id,
+                cantidad: 1
+            })
+        })
 
-     if (data.success) {
-        const contador = document.getElementById('carrito-contador');
-        contador.innerText = data.total_items;
+    .then(res => res.json())
+    .then(data => {
 
-        contador.style.transform = "scale(1.3)";
-        setTimeout(() => {
-            contador.style.transform = "scale(1)";
-        }, 200);
-    }
+        if (data.success) {
+            actualizarContador(data.total_items);
+        }
 
 
-}) 
-.catch(error => console.error("Error:", error));
-    
+    }) 
+    .catch(error => console.error("Error:", error));
+
+        if(carrito[id] <= 0){
+
+                delete carrito[id]
+
+                document.getElementById("carrito-"+id).innerHTML=
+                `<button class="btn btn-warning"
+                onclick="agregarProducto(${id})">
+                🛒 Añadir
+                </button>`
+
+                return
+            }
+
+            document.getElementById("cantidad-"+id).innerText=carrito[id]
+
 }
+
 
 function renderCantidad(id){
 
@@ -100,7 +122,7 @@ function vistaBasecarrito() {
     fetch("/vistaBasecarrito/")
     .then(res => res.json())
     .then(data => {
-        document.getElementById('carrito-contador').innerText = data.total_items;
+        actualizarContador(data.total_items);
     })
     .catch(error => console.error("Error:", error));
 }
@@ -134,7 +156,7 @@ window.onload = function(){
 }
 document.querySelectorAll(".btn-agregar").forEach(btn => {
     btn.addEventListener("click", function() {
-        const id = this.dataset.id;
+        const id = Number(this.dataset.id);
         agregarProducto(id);
     });
 });
