@@ -13,6 +13,7 @@ def _obtener_pedido_activo(request):
         filtros["usuario__isnull"] = True
     return Pedido.objects.filter(**filtros).first()
 
+
 def listarProductos(request):
 
     productos = Producto.objects.all()
@@ -32,11 +33,16 @@ def listarProductos(request):
 
 def vistaBasecarrito(request):
     pedido = _obtener_pedido_activo(request)
-
     total_items = 0
 
     if pedido:
         total_items = sum(item.cantidad for item in pedido.items.all())
+
+    return JsonResponse({
+        "success": True,
+        "total_items": total_items
+    })
+
     
 
     return JsonResponse({
@@ -87,7 +93,7 @@ import json
   
 def agregar_carrito_ajax(request):
     if request.method == "POST":
-        if request.content_type == "application/json":
+        if (request.content_type or "").startswith("application/json"):
             payload = json.loads(request.body or "{}")
             producto_id = payload.get("producto_id")
             cantidad = int(payload.get("cantidad", 1))
@@ -96,9 +102,10 @@ def agregar_carrito_ajax(request):
             cantidad = int(request.POST.get("cantidad", 1))
 
         if not producto_id:
-            return JsonResponse({"success": False, "error": "producto_id requerido"}, status=400)
-
-        cantidad = max(cantidad, -1000)
+            return JsonResponse(
+                {"success": False, "error": "producto_id requerido"},
+                status=400
+            )
 
         filtros_pedido = {"estado": "R"}
         if request.user.is_authenticated:
@@ -108,26 +115,28 @@ def agregar_carrito_ajax(request):
 
         pedido, _ = Pedido.objects.get_or_create(**filtros_pedido)
 
-
         item, creado = PedidoItem.objects.get_or_create(
             pedido=pedido,
             producto_id=producto_id
         )
 
-
         nueva_cantidad = (0 if creado else item.cantidad) + cantidad
+
         if nueva_cantidad <= 0:
             item.delete()
         else:
             item.cantidad = nueva_cantidad
             item.save()
 
-
-        # 🔥calcular total actualizado
         total_items = sum(i.cantidad for i in pedido.items.all())
 
         return JsonResponse({
             "success": True,
             "total_items": total_items
         })
-   
+
+    return JsonResponse(
+        {"success": False, "error": "Método no permitido"},
+        status=405
+    )
+
