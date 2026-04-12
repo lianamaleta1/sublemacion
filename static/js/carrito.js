@@ -27,6 +27,49 @@ function obtenerTotalLocal() {
     );
 }
 
+
+function mostrarMensajeCarrito(mensaje) {
+    let aviso = document.getElementById("carrito-mensaje");
+
+    if (!aviso) {
+        aviso = document.createElement("div");
+        aviso.id = "carrito-mensaje";
+        aviso.style.position = "fixed";
+        aviso.style.top = "90px";
+        aviso.style.right = "20px";
+        aviso.style.zIndex = "9999";
+        aviso.style.background = "#dc3545";
+        aviso.style.color = "#fff";
+        aviso.style.padding = "10px 14px";
+        aviso.style.borderRadius = "8px";
+        aviso.style.boxShadow = "0 4px 12px rgba(0,0,0,.2)";
+        document.body.appendChild(aviso);
+    }
+
+    aviso.innerText = mensaje;
+    clearTimeout(aviso._timeoutId);
+    aviso._timeoutId = setTimeout(() => {
+        aviso.remove();
+    }, 2800);
+}
+
+function sincronizarCantidadProducto(id, cantidadActual) {
+    if (cantidadActual <= 0) {
+        delete carrito[id];
+        document.getElementById("carrito-"+id).innerHTML =
+        `<button class="btn btn-warning"
+        onclick="agregarProducto(${id})">
+        🛒 Añadir
+        </button>`;
+        return;
+    }
+
+    carrito[id] = cantidadActual;
+    renderCantidad(id);
+    document.getElementById("cantidad-"+id).innerText = cantidadActual;
+}
+
+
 function renderCantidad(id) {
     const contenedor = document.getElementById("carrito-" + id);
     if (!contenedor) return;
@@ -68,14 +111,22 @@ function agregarProducto(id) {
         .then((res) => res.json())
         .then((data) => {
             if (data.success) {
-                // Sincroniza con backend
                 actualizarContador(data.total_items);
             } else {
+                if (typeof data.cantidad_actual === "number") {
+                    sincronizarCantidadProducto(id, data.cantidad_actual);
+                    actualizarContador(obtenerTotalLocal());
+                }
+                if (data.error) {
+                    mostrarMensajeCarrito(data.error);
+                }
                 vistaBasecarrito();
+
             }
         })
         .catch((error) => {
             console.error("Error:", error);
+            mostrarMensajeCarrito("No se pudo actualizar el carrito. Intenta de nuevo.");
             vistaBasecarrito();
         });
 }
@@ -176,6 +227,8 @@ function getCookie(name) {
     }
     return cookieValue;
 }
+
+
 
 window.agregarProducto = agregarProducto;
 window.cambiarCantidad = cambiarCantidad;

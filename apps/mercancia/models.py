@@ -6,9 +6,11 @@ from django.contrib.auth.models import User
 
 class Pedido(models.Model):
     choice_estado = (
-        ("R", "En camino"),
-        ("L", "Listo"),
-        ("D", "Demorado"),
+        ("C", "Carrito"),
+        ("P", "Pagado"),
+        ("R", "Enviado"),
+        ("E", "Entregado"),
+        ("C", "Cancelado"),
     )
     usuario=models.ForeignKey(User, on_delete=models.CASCADE,blank=True,null=True)
     detalle = models.CharField(max_length=30, blank=True)

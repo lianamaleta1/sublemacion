@@ -5,6 +5,9 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
+
+MAX_CANTIDAD_POR_PRODUCTO = 10
+
 def _obtener_pedido_activo(request):
     filtros = {"estado": "R"}
     if request.user.is_authenticated:
@@ -77,6 +80,8 @@ def agregar_carrito(request, producto_id):
 
     if not creado:
         item.cantidad += 1
+        if item.cantidad < MAX_CANTIDAD_POR_PRODUCTO:
+            item.cantidad += 1
         item.save()
 
     return redirect("listar_productos")
@@ -96,16 +101,22 @@ def agregar_carrito_ajax(request):
         if (request.content_type or "").startswith("application/json"):
             payload = json.loads(request.body or "{}")
             producto_id = payload.get("producto_id")
-            cantidad = int(payload.get("cantidad", 1))
+            cantidad_raw = payload.get("cantidad", 1)
         else:
             producto_id = request.POST.get("producto_id")
-            cantidad = int(request.POST.get("cantidad", 1))
+            cantidad_raw = request.POST.get("cantidad", 1)
 
         if not producto_id:
             return JsonResponse(
                 {"success": False, "error": "producto_id requerido"},
                 status=400
             )
+        
+        try:
+            cantidad = int(cantidad_raw)
+        except (TypeError, ValueError):
+            return JsonResponse({"success": False, "error": "cantidad inválida"}, status=400)
+
 
         filtros_pedido = {"estado": "R"}
         if request.user.is_authenticated:
@@ -120,7 +131,17 @@ def agregar_carrito_ajax(request):
             producto_id=producto_id
         )
 
-        nueva_cantidad = (0 if creado else item.cantidad) + cantidad
+        cantidad_actual = 0 if creado else item.cantidad
+        nueva_cantidad = cantidad_actual + cantidad
+
+        if nueva_cantidad > MAX_CANTIDAD_POR_PRODUCTO:
+            return JsonResponse({
+                "success": False,
+                "error": f"Máximo {MAX_CANTIDAD_POR_PRODUCTO} unidades por producto",
+                "cantidad_actual": cantidad_actual,
+                "maximo_permitido": MAX_CANTIDAD_POR_PRODUCTO
+            }, status=400)
+
 
         if nueva_cantidad <= 0:
             item.delete()
