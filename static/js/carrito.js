@@ -8,8 +8,8 @@ if (data) {
         carrito = JSON.parse(contenido);
     }
 }
-
-function actualizarContador(totalItems) {
+//Actualiza el número del carrito en navbar y aplica una animación rápida de escala para feedback visual.
+function actualizarContador(totalItems) {   
     const contador = document.getElementById("carrito-contador");
     if (!contador) return;
 
@@ -20,6 +20,8 @@ function actualizarContador(totalItems) {
     }, 200);
 }
 
+/* Calcula el total de items en el carrito sumando las cantidades almacenadas localmente.
+ Esto se usa para mantener el contador actualizado incluso si hay discrepancias con el servidor.*/
 function obtenerTotalLocal() {
     return Object.values(carrito).reduce(
         (total, cantidad) => total + Number(cantidad || 0),
@@ -27,7 +29,7 @@ function obtenerTotalLocal() {
     );
 }
 
-
+//Muestra un mensaje de error o información relacionado con el carrito. El mensaje desaparece automáticamente después de unos segundos.
 function mostrarMensajeCarrito(mensaje) {
     let aviso = document.getElementById("carrito-mensaje");
 
@@ -53,6 +55,9 @@ function mostrarMensajeCarrito(mensaje) {
     }, 2800);
 }
 
+/* Sincroniza la cantidad de un producto específico en el carrito. Si la cantidad es 0 o menos,
+  elimina el producto del carrito y actualiza la interfaz para mostrar el botón de "Añadir".
+  Si la cantidad es válida, actualiza el carrito y la interfaz con la nueva cantidad.*/
 function sincronizarCantidadProducto(id, cantidadActual) {
     if (cantidadActual <= 0) {
         delete carrito[id];
@@ -69,7 +74,8 @@ function sincronizarCantidadProducto(id, cantidadActual) {
     document.getElementById("cantidad-"+id).innerText = cantidadActual;
 }
 
-
+/* Renderiza los controles de cantidad para un producto específico en el carrito. 
+Si el contenedor no existe, no hace nada.*/
 function renderCantidad(id) {
     const contenedor = document.getElementById("carrito-" + id);
     if (!contenedor) return;
@@ -82,7 +88,9 @@ function renderCantidad(id) {
         </div>
     `;
 }
-
+/*  Agrega un producto al carrito.
+ Actualiza la cantidad localmente y en la interfaz de usuario de inmediato para una experiencia fluida.*/
+ 
 function agregarProducto(id) {
     id = Number(id);
 
@@ -131,58 +139,64 @@ function agregarProducto(id) {
         });
 }
 
-function cambiarCantidad(id, valor) {
-    id = Number(id);
+/* Cambia la cantidad de un producto en el carrito. Si la cantidad resultante es 0 o menos, elimina el producto del carrito.
+Actualiza la interfaz de usuario y el contador de manera inmediata para una experiencia fluida, y luego sincroniza con el servidor.*/
+function cambiarCantidad(id, valor){
 
-    carrito[id] = (carrito[id] || 0) + valor;
+    carrito[id] = (carrito[id] || 0) + valor
 
     fetch("/ajax/agregar-carrito/", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "X-CSRFToken": getCookie("csrftoken"),
+            "X-CSRFToken": getCookie("csrftoken")
         },
         body: JSON.stringify({
             producto_id: id,
-            cantidad: valor,
-        }),
-    })
-        .then((res) => res.json())
-        .then((data) => {
-            if (data.success) {
-                actualizarContador(data.total_items);
-            } else {
-                vistaBasecarrito();
-            }
+            cantidad: valor
         })
-        .catch((error) => {
-            console.error("Error:", error);
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            actualizarContador(data.total_items);
+        } else {
+            if (typeof data.cantidad_actual === "number") {
+                sincronizarCantidadProducto(id, data.cantidad_actual);
+                actualizarContador(obtenerTotalLocal());
+            }
+            if (data.error) {
+                mostrarMensajeCarrito(data.error);
+            }
             vistaBasecarrito();
-        });
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        mostrarMensajeCarrito("No se pudo actualizar el carrito. Intenta de nuevo.");
+        vistaBasecarrito();
+    });
 
-    if (carrito[id] <= 0) {
-        delete carrito[id];
+    if(carrito[id] <= 0){
+
+        delete carrito[id]
         actualizarContador(obtenerTotalLocal());
 
-        const contenedor = document.getElementById("carrito-" + id);
-        if (contenedor) {
-            contenedor.innerHTML = `
-                <button class="btn btn-warning" onclick="agregarProducto(${id})">
-                    🛒 Añadir
-                </button>
-            `;
-        }
-        return;
+        document.getElementById("carrito-"+id).innerHTML=
+        `<button class="btn btn-warning"
+        onclick="agregarProducto(${id})">
+        🛒 Añadir
+        </button>`
+
+        return
     }
 
-    const cantidadEl = document.getElementById("cantidad-" + id);
-    if (cantidadEl) {
-        cantidadEl.innerText = carrito[id];
-    }
-
+    document.getElementById("cantidad-"+id).innerText=carrito[id]
     actualizarContador(obtenerTotalLocal());
-}
 
+}
+   
+/* Obtiene la cantidad actual de un producto en el carrito. Si el producto no está en el carrito, devuelve 0.*/
 function vistaBasecarrito() {
     fetch("/vistaBasecarrito/")
         .then((res) => res.json())
