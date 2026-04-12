@@ -1,17 +1,26 @@
+import json
+
 from django.shortcuts import render, redirect,get_object_or_404
 from .models import Producto, Pedido, PedidoItem
 from django.core.paginator import Paginator
 from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
+
+MAX_CANTIDAD_POR_PRODUCTO = 10
+
+
+def _obtener_pedido_activo(request):
+    filtros = {"estado": "R"}
+    if request.user.is_authenticated:
+        filtros["usuario"] = request.user
+    else:
+        filtros["usuario__isnull"] = True
+    return Pedido.objects.filter(**filtros).first()
 
 def listarProductos(request):
 
     productos = Producto.objects.all()
-    pedido = Pedido.objects.filter(
-        #usuario=request.user,
-        estado="R"
-    ).first()
+    pedido = _obtener_pedido_activo(request)
 
     carrito = {}
     total_items = 0
@@ -20,16 +29,13 @@ def listarProductos(request):
         for item in pedido.items.all():
             carrito[item.producto.id] = item.cantidad
 
-        total_items = pedido.items.count()
+        total_items = sum(item.cantidad for item in pedido.items.all())
 
 
     return render(request,'mercancia/list_product.html',{'productos':productos, 'carrito':json.dumps(carrito), 'total_items':total_items})
 
 def vistaBasecarrito(request):
-    pedido = Pedido.objects.filter(
-        usuario=request.user,
-        estado="R"
-    ).first()
+    pedido = _obtener_pedido_activo(request)
 
     total_items = 0
 
@@ -38,9 +44,9 @@ def vistaBasecarrito(request):
     
 
     return JsonResponse({
-            "success": True,
-            "total_items": total_items
-        })
+        "success": True,
+        "total_items": total_items
+    })
 
 def vistaTazas(request):
     tazas=Producto.objects.filter(categoria='J')
@@ -68,7 +74,8 @@ def agregar_carrito(request, producto_id):
     )
 
     if not creado:
-        item.cantidad += 1
+        if item.cantidad < MAX_CANTIDAD_POR_PRODUCTO:
+            item.cantidad += 1
         item.save()
 
     return redirect("listar_productos")
@@ -81,34 +88,61 @@ def verCarrito(request):
     return render(request, "mercancia/carrito.html",{"items":items,"total":total})
 
 
-import json
-  
+
 def agregar_carrito_ajax(request):
     if request.method == "POST":
-        producto_id = request.POST.get("producto_id")
+        if (request.content_type or "").startswith("application/json"):
+            payload = json.loads(request.body or "{}")
+            producto_id = payload.get("producto_id")
+            cantidad_raw = payload.get("cantidad", 1)
+        else:
+            producto_id = request.POST.get("producto_id")
+            cantidad_raw = request.POST.get("cantidad", 1)
 
-        pedido, _ = Pedido.objects.get_or_create(
-            usuario=request.user,
-            estado="R"
-        )
+        if not producto_id:
+            return JsonResponse({"success": False, "error": "producto_id requerido"}, status=400)
+
+        try:
+            cantidad = int(cantidad_raw)
+        except (TypeError, ValueError):
+            return JsonResponse({"success": False, "error": "cantidad inválida"}, status=400)
+
+        filtros_pedido = {"estado": "R"}
+        if request.user.is_authenticated:
+            filtros_pedido["usuario"] = request.user
+        else:
+            filtros_pedido["usuario"] = None
+
+        pedido, _ = Pedido.objects.get_or_create(**filtros_pedido)
 
         item, creado = PedidoItem.objects.get_or_create(
             pedido=pedido,
             producto_id=producto_id
         )
 
-        if not creado:
-            item.cantidad += 1
+        cantidad_actual = 0 if creado else item.cantidad
+        nueva_cantidad = cantidad_actual + cantidad
+
+        if nueva_cantidad > MAX_CANTIDAD_POR_PRODUCTO:
+            return JsonResponse({
+                "success": False,
+                "error": f"Máximo {MAX_CANTIDAD_POR_PRODUCTO} unidades por producto",
+                "cantidad_actual": cantidad_actual,
+                "maximo_permitido": MAX_CANTIDAD_POR_PRODUCTO
+            }, status=400)
+
+        if nueva_cantidad <= 0:
+            item.delete()
         else:
-            item.cantidad = 1
+            item.cantidad = nueva_cantidad
+            item.save()
 
-        item.save()
-
-        # 🔥 calcular total actualizado
         total_items = sum(i.cantidad for i in pedido.items.all())
 
         return JsonResponse({
             "success": True,
             "total_items": total_items
         })
+
+    return JsonResponse({"success": False, "error": "Método no permitido"}, status=405)
    

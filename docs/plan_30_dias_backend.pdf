@@ -1,0 +1,152 @@
+%PDF-1.4
+%
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [ 4 0 R 6 0 R ] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 2640 >>
+stream
+BT
+/F1 11 Tf
+50 760 Td
+14 TL
+(Plan de 30 dias - Backend Django) Tj
+T*
+() Tj
+T*
+(Plan de 30 dias Backend Django para tienda online \(Tazas y Pullovers\)) Tj
+T*
+() Tj
+T*
+(Objetivo del mes:) Tj
+T*
+(Pasar de un backend funcional a uno profesional, automatizado y escalable, sin abrumarte.) Tj
+T*
+() Tj
+T*
+(SEMANA 1 Base solida \(orden + calidad\)) Tj
+T*
+(Meta: dejar el backend limpio, confiable y facil de mantener.) Tj
+T*
+(Dia 1-2: Definir estados claros del pedido \(carrito, pagado, enviado, entregado, cancelado\).) Tj
+T*
+(Dia 3-4: Validaciones en backend \(stock, cantidades, errores consistentes\).) Tj
+T*
+(Dia 5: Auditoria minima \(fechas, referencias de pago/envio, logs basicos\).) Tj
+T*
+(Dia 6-7: Tests iniciales \(carrito, pedido, total\).) Tj
+T*
+(Resultado: backend estable y menos bugs.) Tj
+T*
+() Tj
+T*
+(SEMANA 2 Automatizacion sin IA \(alto impacto\)) Tj
+T*
+(Meta: quitar tareas manuales repetitivas.) Tj
+T*
+(Dia 8-9: Tareas programadas \(limpieza de carritos abandonados, pendientes antiguos\).) Tj
+T*
+(Dia 10-11: Notificaciones automaticas \(confirmacion de pedido y cambios de estado\).) Tj
+T*
+(Dia 12-13: Reporte diario/semanal \(ventas, pedidos, productos top\).) Tj
+T*
+(Dia 14: Panel simple de que revisar hoy.) Tj
+T*
+(Resultado: menos supervision manual y mejor operacion.) Tj
+T*
+() Tj
+T*
+(SEMANA 3 Integraciones API reales \(nivel pro\)) Tj
+T*
+(Meta: conectar con pagos, envios y mensajeria.) Tj
+T*
+(Dia 15-16: API de pagos en sandbox y persistencia de estado.) Tj
+T*
+(Dia 17-18: API de envios \(costo, guia, tracking\).) Tj
+T*
+(Dia 19-20: API de notificaciones \(email, WhatsApp/SMS opcional\).) Tj
+T*
+(Dia 21: Reintentos automaticos y cola de errores.) Tj
+T*
+(Resultado: flujo completo de compra automatizado.) Tj
+T*
+() Tj
+T*
+(SEMANA 4 IA aplicada \(practica y util\)) Tj
+T*
+(Meta: usar IA donde realmente ahorra tiempo.) Tj
+T*
+(Dia 22-23: Clasificador de pedidos prioritarios/sospechosos.) Tj
+T*
+(Dia 24-25: Asistente para preguntas frecuentes de clientes.) Tj
+T*
+(Dia 26-27: Recomendaciones basicas de productos.) Tj
+T*
+(Dia 28-29: Dashboard ejecutivo \(conversion, ticket promedio, abandono\).) Tj
+T*
+(Dia 30: Cierre profesional \(documentacion y checklist de produccion\).) Tj
+T*
+(Resultado: operacion semiautomatica con IA + control humano en excepciones.) Tj
+T*
+() Tj
+T*
+(PRIORIDADES si tienes poco tiempo:) Tj
+T*
+(1\) Estados + validaciones + tests basicos.) Tj
+T*
+(2\) Notificaciones automaticas + tareas programadas.) Tj
+T*
+(3\) Integracion de pagos/envios en sandbox.) Tj
+T*
+() Tj
+T*
+(Checklist semanal rapido:) Tj
+T*
+(- Se redujeron tareas manuales?) Tj
+T*
+(- Los errores estan registrados y visibles?) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 153 >>
+stream
+BT
+/F1 11 Tf
+50 760 Td
+14 TL
+(- Cada cambio tiene al menos una validacion o test?) Tj
+T*
+(- El cliente recibe confirmaciones automaticas?) Tj
+T*
+() Tj
+ET
+endstream
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000129 00000 n 
+0000000199 00000 n 
+0000000325 00000 n 
+0000003017 00000 n 
+0000003143 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+3347
+%%EOF
