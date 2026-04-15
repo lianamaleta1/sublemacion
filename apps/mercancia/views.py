@@ -3,9 +3,10 @@ from .models import Producto, Pedido, PedidoItem
 from django.core.paginator import Paginator
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+import logging
 # Create your views here.
 
-
+logger=logging.getLogger(__name__)
 MAX_CANTIDAD_POR_PRODUCTO = 10
 
 def _obtener_pedido_activo(request):
@@ -98,6 +99,8 @@ import json
   
 def agregar_carrito_ajax(request):
     if request.method == "POST":
+
+       
         if (request.content_type or "").startswith("application/json"):
             payload = json.loads(request.body or "{}")
             producto_id = payload.get("producto_id")
@@ -130,9 +133,15 @@ def agregar_carrito_ajax(request):
             pedido=pedido,
             producto_id=producto_id
         )
+        
+        #se va a registrar un log con este texto en un arhivo txt llamado debug.log
+        logger.info(f"El usuario {request.user} hizo un pedido {item}" )
+
 
         cantidad_actual = 0 if creado else item.cantidad
         nueva_cantidad = cantidad_actual + cantidad
+
+        logger.info(f"El usuario tiene una nueva cantidad {nueva_cantidad}" )
 
         if nueva_cantidad > MAX_CANTIDAD_POR_PRODUCTO:
             return JsonResponse({

@@ -16,6 +16,12 @@ class Pedido(models.Model):
     detalle = models.CharField(max_length=30, blank=True)
     estado = models.CharField(max_length=1, choices=choice_estado)
     metodo_pago = models.CharField(max_length=30, blank=True)  # revisit payment method
+    fecha_y_hora_creacion =models.DateTimeField(blank=True,null=True )
+    actualizacion=models.DateField(blank=True,null=True)
+    #se guarda los nueros de transaccion como ID paypal,ID  de strip
+    referencia_pago=models.CharField(max_length=255,blank=True,null=True) 
+    #para logistica ID de envio
+    referencia_envio=models.CharField(max_length=255,blank=True,null=True) 
 
     
     def __str__(self):
@@ -86,6 +92,7 @@ class PedidoItem(models.Model):
     )
 
     cantidad = models.PositiveIntegerField(default=1)
+    
 
     def subtotal(self):
         return self.producto.precio * self.cantidad

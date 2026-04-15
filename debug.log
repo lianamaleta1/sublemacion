@@ -1,0 +1,35 @@
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET /admin/ HTTP/1.1" 200 13001
+"GET /static/admin/css/dark_mode.css HTTP/1.1" 200 3538
+"GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+"GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+"GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+"GET /static/admin/css/responsive.css HTTP/1.1" 200 16273
+"GET /static/admin/css/base.css HTTP/1.1" 200 23100
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 978
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 593
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4282
+"GET /listar/ HTTP/1.1" 200 5544
+"GET /media/productos/images_1.jpg HTTP/1.1" 200 9373
+"GET /media/productos/pullo.jpg HTTP/1.1" 200 9406
+"GET /media/productos/images_wirCM49.jpg HTTP/1.1" 200 8360
+"GET /media/productos/71BqP1cOlNL_Veb6Epf._AC_UF8941000_QL80_.jpg HTTP/1.1" 200 88129
+"GET /static/css/style.css HTTP/1.1" 200 2217
+"GET /static/css/all.min.css HTTP/1.1" 200 102526
+"GET /static/vendor/bootstrap/bootstrap.min.css HTTP/1.1" 200 232948
+"GET /static/js/main.js HTTP/1.1" 200 233
+"GET /static/js/carrito.js HTTP/1.1" 200 8724
+"GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+"GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+"GET /static/js/bootstrap.bundle.min.js HTTP/1.1" 200 80663
+"GET /vistaBasecarrito/ HTTP/1.1" 200 35
+"POST /ajax/agregar-carrito/ HTTP/1.1" 200 36
+/app/apps/mercancia/views.py changed, reloading.
+Watching for file changes with StatReloader
+/app/apps/mercancia/views.py changed, reloading.
+Watching for file changes with StatReloader
+/app/apps/mercancia/views.py changed, reloading.
+Watching for file changes with StatReloader

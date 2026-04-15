@@ -55,9 +55,10 @@ function mostrarMensajeCarrito(mensaje) {
     }, 2800);
 }
 
-/* Sincroniza la cantidad de un producto específico en el carrito. Si la cantidad es 0 o menos,
-  elimina el producto del carrito y actualiza la interfaz para mostrar el botón de "Añadir".
-  Si la cantidad es válida, actualiza el carrito y la interfaz con la nueva cantidad.*/
+/*“Repara” la UI con la cantidad real que viene del backend:
+si cantidadActual <= 0, elimina el item local y vuelve a botón “Añadir”;
+si es mayor, re-renderiza controles +/- y pone cantidad correcta*/
+
 function sincronizarCantidadProducto(id, cantidadActual) {
     if (cantidadActual <= 0) {
         delete carrito[id];
@@ -74,8 +75,7 @@ function sincronizarCantidadProducto(id, cantidadActual) {
     document.getElementById("cantidad-"+id).innerText = cantidadActual;
 }
 
-/* Renderiza los controles de cantidad para un producto específico en el carrito. 
-Si el contenedor no existe, no hace nada.*/
+/* Dibuja los botones - y + y el <span> con la cantidad para un producto específico..*/
 function renderCantidad(id) {
     const contenedor = document.getElementById("carrito-" + id);
     if (!contenedor) return;
@@ -88,8 +88,24 @@ function renderCantidad(id) {
         </div>
     `;
 }
-/*  Agrega un producto al carrito.
- Actualiza la cantidad localmente y en la interfaz de usuario de inmediato para una experiencia fluida.*/
+/*  Flujo al hacer clic en “Añadir”:
+
+    Incrementa localmente (carrito[id] += 1) para respuesta inmediata.
+
+    Renderiza controles y contador local.
+
+    Envía POST JSON a /ajax/agregar-carrito/.
+
+    Si backend responde OK: usa data.total_items.
+
+    Si backend responde error (límite, etc): sincroniza cantidad real y muestra mensaje.
+
+    Si hay error de red: muestra mensaje genérico y refresca contador desde servidor.
+
+
+    “iniciar o añadir por primera vez desde el botón de compra”.
+    
+    */
  
 function agregarProducto(id) {
     id = Number(id);
@@ -139,8 +155,17 @@ function agregarProducto(id) {
         });
 }
 
-/* Cambia la cantidad de un producto en el carrito. Si la cantidad resultante es 0 o menos, elimina el producto del carrito.
-Actualiza la interfaz de usuario y el contador de manera inmediata para una experiencia fluida, y luego sincroniza con el servidor.*/
+/*  Flujo al hacer clic en los botones de cantidad:
+    Incrementa o decrementa localmente la cantidad (carrito[id] += valor) para respuesta inmediata.
+    Renderiza controles y contador local.
+    Envía POST JSON a /ajax/agregar-carrito/.
+    Si backend responde OK: usa data.total_items.
+    Si backend responde error (límite, etc): sincroniza cantidad real y muestra mensaje.
+    Si hay error de red: muestra mensaje genérico y refresca contador desde servidor.
+    
+    “editar una cantidad que ya existe”.
+    
+    */
 function cambiarCantidad(id, valor){
 
     carrito[id] = (carrito[id] || 0) + valor
