@@ -2,26 +2,96 @@
 
 {% block content %}
 
+<section class="carrito-page">
+    <div class="container">
+        <h1 class="carrito-title">Tu bolsa</h1>
 
-{% if items %}
-{% for item in items %}
+        {% if items %}
+        <div class="carrito-layout">
+            <div class="carrito-lista">
+                {% for item in items %}
+                <article class="carrito-item">
+                    <div class="carrito-item-img">
+                        {% with primera=item.producto.imagenes.first %}
+                            {% if primera %}
+                                <img src="{{ primera.imagen.url }}" alt="{{ item.producto.nombre }}">
+                            {% else %}
+                                <div class="carrito-item-placeholder">Sin imagen</div>
+                            {% endif %}
+                        {% endwith %}
+                    </div>
 
-<div>
+                    <div class="carrito-item-info">
+                        <h3>{{ item.producto.nombre }}</h3>
+                        <p class="carrito-ref">Ref: {{ item.producto.id }}</p>
+                        <div class="carrito-cantidad">
+                            <span class="etiqueta">Cantidad</span>
+                            <div class="carrito-cantidad-control">
+                                <form method="post" action="{% url 'actualizar_item_carrito' item.producto.id %}">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="accion" value="restar">
+                                    <button type="submit">-</button>
+                                </form>
+                                <span class="valor">{{ item.cantidad }}</span>
+                                <form method="post" action="{% url 'actualizar_item_carrito' item.producto.id %}">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="accion" value="sumar">
+                                    <button type="submit">+</button>
+                                </form>
+                            </div>
+                        </div>
 
-<h5>{{ item.producto.nombre }}</h5>
+                        <div class="carrito-cantidad">
+                            <span class="etiqueta">Cantidad</span>
+                            <span class="valor">{{ item.cantidad }}</span>
+                        </div>
 
-<p>Cantidad: {{ item.cantidad }}</p>
+                        <p class="carrito-precio">Precio unitario: ${{ item.producto.precio }}</p>
+                    </div>
+                    <div class="carrito-item-subtotal">
+                        <span>Subtotal</span>
+                        <strong>${{ item.subtotal }}</strong>
+                        <form method="post" action="{% url 'eliminar_item_carrito' item.producto.id %}" class="mt-2">
+                            {% csrf_token %}
+                            <button type="submit" class="btn-eliminar-item">Eliminar</button>
+                        </form>
 
-<p>Precio: {{ item.producto.precio }}</p>
+                   
+            </div>
 
-<p>Subtotal: {{ item.subtotal }}</p>
+                    <div class="carrito-item-subtotal">
+                        <span>Subtotal</span>
+                        <strong>${{ item.subtotal }}</strong>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
 
-</div>
-
-{% endfor %}
-<h3>Total: {{ total }}</h3>
-{% else %}
- <h3>Total: No hay nada</h3>
-{% endif %}
-
+            <aside class="carrito-resumen">
+                <h2>Resumen</h2>
+                <div class="linea">
+                    <span>Total productos</span>
+                    <strong>${{ total }}</strong>
+                </div>
+                <div class="linea">
+                    <span>Envío estimado</span>
+                    <strong>Gratis</strong>
+                </div>
+                <hr>
+                <div class="linea total">
+                    <span>Total</span>
+                    <strong>${{ total }}</strong>
+                </div>
+                <button class="btn-resumen">Finalizar compra</button>
+                <a href="{% url 'listar_productos' %}" class="btn-seguir">Seguir comprando</a>
+            </aside>
+        </div>
+        {% else %}  
+        <div class="carrito-vacio">
+            <h3>Tu carrito está vacío</h3>
+            <p>Aún no has agregado productos.</p>
+            <a href="{% url 'listar_productos' %}" class="btn-seguir">Ir a productos</a>
+        </div>
+        {% endif %}
+    </div>
 {% endblock %}

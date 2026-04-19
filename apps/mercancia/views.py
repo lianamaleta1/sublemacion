@@ -6,7 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 import logging
 # Create your views here.
 
-logger=logging.getLogger(__name__)
+logger=logging.getLogger('mercancia')
 MAX_CANTIDAD_POR_PRODUCTO = 10
 
 def _obtener_pedido_activo(request):
@@ -88,7 +88,7 @@ def agregar_carrito(request, producto_id):
     return redirect("listar_productos")
 
 def verCarrito(request):
-    pedido= Pedido.objects.filter(estado="R").first()
+    pedido= _obtener_pedido_activo(request)
     items=pedido.items.all() if pedido else []
     total=sum(item.subtotal() for item in items)
 
@@ -170,3 +170,58 @@ def agregar_carrito_ajax(request):
         status=405
     )
 
+def eliminar_item(request, item_id):
+    item = get_object_or_404(PedidoItem, id=item_id)
+    item.delete()
+    return redirect('verCarrito')
+
+
+def actualizar_item_carrito(request, producto_id):
+    if request.method != "POST":
+        return redirect("verCarrito")
+
+    pedido = _obtener_pedido_activo(request)
+    if not pedido:
+        return redirect("verCarrito")
+
+    item = get_object_or_404(PedidoItem, pedido=pedido, producto_id=producto_id)
+    accion = request.POST.get("accion")
+
+    if accion == "sumar":
+        if item.cantidad < MAX_CANTIDAD_POR_PRODUCTO:
+            item.cantidad += 1
+            item.save()
+    elif accion == "restar":
+        item.cantidad -= 1
+        if item.cantidad <= 0:
+            item.delete()
+        else:
+            item.save()
+
+    return redirect("verCarrito")
+
+def eliminar_item_carrito(request, producto_id):
+    if request.method != "POST":
+        return redirect("verCarrito")
+
+    pedido = _obtener_pedido_activo(request)
+    if pedido:
+        PedidoItem.objects.filter(pedido=pedido, producto_id=producto_id).delete()
+
+    return redirect("verCarrito")
+
+def finalizar_compra(request):
+    pedido = _obtener_pedido_activo(request)
+    if not pedido:
+        return redirect("verCarrito")
+
+    items = pedido.items.all()
+    total = sum(item.subtotal() for item in items)
+
+    if request.method == "POST":
+        pedido.metodo_pago = request.POST.get("metodo_pago", "")
+        pedido.estado = "P"
+        pedido.save()
+        return redirect("listar_productos")
+
+    return render(request, "mercancia/pago.html", {"total": total, "items": items})
