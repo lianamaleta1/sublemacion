@@ -416,3 +416,20 @@ border-radius:7px;
 margin-top:12px;
 }
 
+.btn-resumen{
+border:none;
+background:#111;
+color:#fff;
+width:100%;
+padding:12px;
+border-radius:8px;
+margin:16px 0 10px;
+font-weight:600;
+display:inline-block;
+text-align:center;
+text-decoration:none;
+}
+
+.carrito-resumen form{
+margin:0;
+}

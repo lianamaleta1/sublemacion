@@ -82,7 +82,10 @@
                     <span>Total</span>
                     <strong>${{ total }}</strong>
                 </div>
-                <button class="btn-resumen">Finalizar compra</button>
+                <form action="{% url 'finalizar_compra' %}" method="get">
+                    <button class="btn-resumen">Finalizar compra</button>
+                </form>
+                
                 <a href="{% url 'listar_productos' %}" class="btn-seguir">Seguir comprando</a>
             </aside>
         </div>

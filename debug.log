@@ -726,3 +726,4 @@ INFO 2026-04-19 19:01:09,382 log "GET /verCarrito/ HTTP/1.1" 200 8438
 WARNING 2026-04-19 19:01:09,416 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
 WARNING 2026-04-19 19:01:09,432 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
 INFO 2026-04-19 19:01:09,449 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-20 12:26:50,312 autoreload Watching for file changes with StatReloader
