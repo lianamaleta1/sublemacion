@@ -727,3 +727,303 @@ WARNING 2026-04-19 19:01:09,416 log "GET /static/webfonts/fa-brands-400.woff2 HT
 WARNING 2026-04-19 19:01:09,432 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
 INFO 2026-04-19 19:01:09,449 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
 INFO 2026-04-20 12:26:50,312 autoreload Watching for file changes with StatReloader
+INFO 2026-04-20 12:36:09,242 log "GET /admin HTTP/1.1" 301 0
+INFO 2026-04-20 12:36:09,398 log "GET /admin/ HTTP/1.1" 200 13001
+INFO 2026-04-20 12:36:09,516 log "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 593
+INFO 2026-04-20 12:36:09,517 log "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 978
+INFO 2026-04-20 12:36:11,907 log "GET /listar/ HTTP/1.1" 200 5544
+INFO 2026-04-20 12:36:11,968 log "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-04-20 12:36:11,971 log "GET /static/js/carrito.js HTTP/1.1" 304 0
+WARNING 2026-04-20 12:36:12,012 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-20 12:36:12,040 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-20 12:36:12,041 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-20 12:36:13,748 log "GET /verCarrito/ HTTP/1.1" 200 8433
+WARNING 2026-04-20 12:36:13,951 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-20 12:36:14,003 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-20 12:36:14,022 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-20 12:36:22,059 log "GET /verCarrito/ HTTP/1.1" 200 8433
+WARNING 2026-04-20 12:36:22,125 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-20 12:36:22,145 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-20 12:36:22,153 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-20 12:36:33,735 log "GET /verCarrito/ HTTP/1.1" 200 8435
+WARNING 2026-04-20 12:36:33,799 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-20 12:36:33,818 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-20 12:36:33,835 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-20 12:39:02,728 log "GET /verCarrito/ HTTP/1.1" 200 8433
+WARNING 2026-04-20 12:39:02,847 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-20 12:39:02,880 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-20 12:39:02,891 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-20 12:39:03,882 log "GET /verCarrito/ HTTP/1.1" 200 8433
+WARNING 2026-04-20 12:39:03,937 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-20 12:39:03,959 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-20 12:39:03,974 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-20 12:39:04,516 log "GET /verCarrito/ HTTP/1.1" 200 8433
+WARNING 2026-04-20 12:39:04,569 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-20 12:39:04,594 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-20 12:39:04,610 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-20 12:39:07,034 log "GET /verCarrito/ HTTP/1.1" 200 8433
+INFO 2026-04-20 12:39:07,101 log "GET /static/js/main.js HTTP/1.1" 200 233
+INFO 2026-04-20 12:39:07,106 log "GET /static/js/carrito.js HTTP/1.1" 200 8724
+INFO 2026-04-20 12:39:07,121 log "GET /static/js/bootstrap.bundle.min.js HTTP/1.1" 200 80663
+INFO 2026-04-20 12:39:07,127 log "GET /static/css/style.css HTTP/1.1" 200 5571
+INFO 2026-04-20 12:39:07,129 log "GET /static/css/all.min.css HTTP/1.1" 200 102526
+INFO 2026-04-20 12:39:07,153 log "GET /static/vendor/bootstrap/bootstrap.min.css HTTP/1.1" 200 232948
+INFO 2026-04-20 12:39:07,164 log "GET /media/productos/pullo.jpg HTTP/1.1" 200 9406
+WARNING 2026-04-20 12:39:07,183 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+INFO 2026-04-20 12:39:07,185 log "GET /media/productos/71BqP1cOlNL_Veb6Epf._AC_UF8941000_QL80_.jpg HTTP/1.1" 200 88129
+WARNING 2026-04-20 12:39:07,199 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-20 12:39:07,205 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+WARNING 2026-04-20 12:39:07,217 log Not Found: /favicon.ico
+WARNING 2026-04-20 12:39:07,218 log "GET /favicon.ico HTTP/1.1" 404 5460
+INFO 2026-04-20 12:39:08,761 log "GET /verCarrito/ HTTP/1.1" 200 8433
+INFO 2026-04-20 12:39:08,821 log "GET /static/css/style.css HTTP/1.1" 200 5571
+INFO 2026-04-20 12:39:08,825 log "GET /static/js/main.js HTTP/1.1" 200 233
+INFO 2026-04-20 12:39:08,826 log "GET /static/js/carrito.js HTTP/1.1" 200 8724
+INFO 2026-04-20 12:39:08,833 log "GET /static/js/bootstrap.bundle.min.js HTTP/1.1" 200 80663
+INFO 2026-04-20 12:39:08,839 log "GET /static/css/all.min.css HTTP/1.1" 200 102526
+INFO 2026-04-20 12:39:08,850 log "GET /static/vendor/bootstrap/bootstrap.min.css HTTP/1.1" 200 232948
+INFO 2026-04-20 12:39:08,859 log "GET /media/productos/pullo.jpg HTTP/1.1" 200 9406
+INFO 2026-04-20 12:39:08,865 log "GET /media/productos/71BqP1cOlNL_Veb6Epf._AC_UF8941000_QL80_.jpg HTTP/1.1" 200 88129
+WARNING 2026-04-20 12:39:08,882 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-20 12:39:08,892 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-20 12:39:08,899 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+WARNING 2026-04-20 12:39:08,950 log Not Found: /favicon.ico
+WARNING 2026-04-20 12:39:08,951 log "GET /favicon.ico HTTP/1.1" 404 5460
+INFO 2026-04-20 12:39:39,882 log "GET /verCarrito/ HTTP/1.1" 200 8433
+INFO 2026-04-20 12:39:39,999 log "GET /static/css/style.css HTTP/1.1" 200 5574
+WARNING 2026-04-20 12:39:40,025 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+INFO 2026-04-20 12:39:40,038 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+WARNING 2026-04-20 12:39:40,038 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-20 12:39:58,712 log "GET /verCarrito/ HTTP/1.1" 200 8433
+INFO 2026-04-20 12:39:58,781 log "GET /static/css/style.css HTTP/1.1" 200 5571
+WARNING 2026-04-20 12:39:58,807 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-20 12:39:58,820 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-20 12:39:58,827 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-20 12:40:01,316 log "GET /finalizar_compra/? HTTP/1.1" 200 2217
+INFO 2026-04-20 12:40:01,427 log "GET /static/css/style.css HTTP/1.1" 304 0
+WARNING 2026-04-20 12:40:01,461 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-20 12:40:01,498 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-20 12:40:01,508 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-20 12:40:23,082 log "POST /finalizar_compra/? HTTP/1.1" 302 0
+INFO 2026-04-20 12:40:23,149 log "GET /listar/ HTTP/1.1" 200 5530
+INFO 2026-04-20 12:40:23,307 log "GET /static/css/style.css HTTP/1.1" 304 0
+WARNING 2026-04-20 12:40:23,362 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-20 12:40:23,375 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-20 12:40:23,381 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-20 12:40:54,286 log "GET /verCarrito/ HTTP/1.1" 200 2140
+INFO 2026-04-20 12:40:54,453 log "GET /static/css/style.css HTTP/1.1" 304 0
+WARNING 2026-04-20 12:40:54,484 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-20 12:40:54,518 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-20 12:40:54,530 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-20 12:40:59,070 log "GET /listar/ HTTP/1.1" 200 5530
+WARNING 2026-04-20 12:40:59,166 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-20 12:40:59,185 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-20 12:40:59,199 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-20 12:41:01,583 log "POST /ajax/agregar-carrito/ HTTP/1.1" 200 35
+INFO 2026-04-20 12:41:03,033 log "POST /ajax/agregar-carrito/ HTTP/1.1" 200 35
+INFO 2026-04-20 12:41:04,020 log "POST /ajax/agregar-carrito/ HTTP/1.1" 200 35
+INFO 2026-04-20 12:41:04,178 log "POST /ajax/agregar-carrito/ HTTP/1.1" 200 35
+INFO 2026-04-20 12:41:04,431 log "POST /ajax/agregar-carrito/ HTTP/1.1" 200 35
+INFO 2026-04-20 12:41:04,611 log "POST /ajax/agregar-carrito/ HTTP/1.1" 200 35
+INFO 2026-04-20 12:41:06,921 log "GET /verCarrito/ HTTP/1.1" 200 8433
+INFO 2026-04-20 12:41:06,980 log "GET /static/css/style.css HTTP/1.1" 304 0
+WARNING 2026-04-20 12:41:07,009 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+INFO 2026-04-20 12:41:07,017 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+WARNING 2026-04-20 12:41:07,022 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-20 12:47:20,952 log "GET /finalizar_compra/? HTTP/1.1" 200 2217
+INFO 2026-04-20 12:47:21,073 log "GET /static/css/style.css HTTP/1.1" 304 0
+WARNING 2026-04-20 12:47:21,090 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-20 12:47:21,104 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-20 12:47:21,116 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-20 12:48:58,576 log "POST /finalizar_compra/? HTTP/1.1" 302 0
+INFO 2026-04-20 12:48:58,649 log "GET /listar/ HTTP/1.1" 200 5530
+INFO 2026-04-20 12:48:58,733 log "GET /static/css/style.css HTTP/1.1" 304 0
+WARNING 2026-04-20 12:48:58,763 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-20 12:48:58,774 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-20 12:48:58,777 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-20 12:50:47,403 log "GET /verCarrito/ HTTP/1.1" 200 2140
+INFO 2026-04-20 12:50:47,531 log "GET /static/css/style.css HTTP/1.1" 304 0
+WARNING 2026-04-20 12:50:47,561 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+INFO 2026-04-20 12:50:47,567 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+WARNING 2026-04-20 12:50:47,575 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-21 15:39:54,652 autoreload Watching for file changes with StatReloader
+INFO 2026-04-21 15:40:55,376 log "GET /admin HTTP/1.1" 301 0
+INFO 2026-04-21 15:40:55,600 log "GET /admin/ HTTP/1.1" 200 13001
+INFO 2026-04-21 15:40:55,811 log "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 593
+INFO 2026-04-21 15:40:55,813 log "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 978
+INFO 2026-04-21 15:40:58,454 log "GET /listar/ HTTP/1.1" 200 5530
+INFO 2026-04-21 15:40:58,518 log "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-04-21 15:40:58,518 log "GET /static/js/carrito.js HTTP/1.1" 304 0
+WARNING 2026-04-21 15:40:58,548 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+INFO 2026-04-21 15:40:58,555 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+WARNING 2026-04-21 15:40:58,560 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-21 15:50:45,048 log "POST /ajax/agregar-carrito/ HTTP/1.1" 200 35
+INFO 2026-04-21 15:50:46,970 log "GET /verCarrito/ HTTP/1.1" 200 6349
+WARNING 2026-04-21 15:50:47,107 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-21 15:50:47,178 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-21 15:50:47,203 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-21 15:56:47,110 log "GET /verCarrito/ HTTP/1.1" 200 6316
+WARNING 2026-04-21 15:56:47,167 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-21 15:56:47,181 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-21 15:56:47,192 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-21 16:00:29,480 log "GET /verCarrito/ HTTP/1.1" 200 6287
+WARNING 2026-04-21 16:00:29,538 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-21 16:00:29,558 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-21 16:00:29,569 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-21 16:01:29,302 log "GET /verCarrito/ HTTP/1.1" 200 6130
+WARNING 2026-04-21 16:01:29,407 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+INFO 2026-04-21 16:01:29,422 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+WARNING 2026-04-21 16:01:29,422 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-21 16:01:36,247 log "GET /verCarrito/ HTTP/1.1" 200 6316
+WARNING 2026-04-21 16:01:36,340 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-21 16:01:36,354 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-21 16:01:36,363 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-21 16:01:47,545 log "GET /verCarrito/ HTTP/1.1" 200 6106
+WARNING 2026-04-21 16:01:47,580 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-21 16:01:47,597 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-21 16:01:47,613 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-21 16:01:55,295 log "POST /actualizar_item/3/ HTTP/1.1" 302 0
+INFO 2026-04-21 16:01:55,343 log "GET /verCarrito/ HTTP/1.1" 200 6106
+WARNING 2026-04-21 16:01:55,413 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-21 16:01:55,429 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-21 16:01:55,439 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-21 16:02:21,586 log "GET /verCarrito/ HTTP/1.1" 200 5930
+WARNING 2026-04-21 16:02:21,643 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-21 16:02:21,662 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-21 16:02:21,679 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-21 16:02:25,230 log "GET /listar/ HTTP/1.1" 200 5536
+WARNING 2026-04-21 16:02:25,330 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-21 16:02:25,363 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-21 16:02:25,378 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-21 16:02:27,822 log "POST /ajax/agregar-carrito/ HTTP/1.1" 200 35
+INFO 2026-04-21 16:02:29,366 log "GET /verCarrito/ HTTP/1.1" 200 8291
+WARNING 2026-04-21 16:02:29,439 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-21 16:02:29,458 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-21 16:02:29,473 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-21 16:06:05,390 log "GET /verCarrito/ HTTP/1.1" 200 9201
+WARNING 2026-04-21 16:06:05,498 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+INFO 2026-04-21 16:06:05,512 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+WARNING 2026-04-21 16:06:05,512 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+WARNING 2026-04-21 16:06:08,849 log "GET /static/vendor/bootstrap/bootstrap.min.css.map HTTP/1.1" 404 1928
+INFO 2026-04-21 16:07:51,365 log "POST /eliminar_item_carrito/3/ HTTP/1.1" 302 0
+INFO 2026-04-21 16:07:51,468 log "GET /verCarrito/ HTTP/1.1" 200 6838
+WARNING 2026-04-21 16:07:51,600 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-21 16:07:51,614 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-21 16:07:51,627 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-21 16:07:52,491 log "POST /eliminar_item_carrito/2/ HTTP/1.1" 302 0
+INFO 2026-04-21 16:07:52,530 log "GET /verCarrito/ HTTP/1.1" 200 2835
+WARNING 2026-04-21 16:07:52,600 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-21 16:07:52,629 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-21 16:07:52,644 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-21 16:09:26,289 log "GET /verCarrito/ HTTP/1.1" 200 2835
+WARNING 2026-04-21 16:09:26,381 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-21 16:09:26,405 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-21 16:09:26,417 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-21 16:09:27,387 log "GET /listar/ HTTP/1.1" 200 5530
+WARNING 2026-04-21 16:09:27,435 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-21 16:09:27,454 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-21 16:09:27,470 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-21 16:09:31,728 log "POST /ajax/agregar-carrito/ HTTP/1.1" 200 35
+INFO 2026-04-21 16:09:33,075 log "GET /verCarrito/ HTTP/1.1" 200 6840
+WARNING 2026-04-21 16:09:33,156 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-21 16:09:33,189 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-21 16:09:33,192 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-21 16:11:34,489 log "GET /verCarrito/ HTTP/1.1" 200 6880
+WARNING 2026-04-21 16:11:34,598 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-21 16:11:34,625 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-21 16:11:34,637 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-21 16:16:10,347 autoreload /app/apps/mercancia/views.py changed, reloading.
+INFO 2026-04-21 16:16:11,661 autoreload Watching for file changes with StatReloader
+INFO 2026-04-21 16:16:17,035 autoreload /app/apps/mercancia/views.py changed, reloading.
+INFO 2026-04-21 16:16:18,050 autoreload Watching for file changes with StatReloader
+INFO 2026-04-21 16:16:27,864 autoreload /app/apps/mercancia/views.py changed, reloading.
+INFO 2026-04-21 16:16:28,457 autoreload Watching for file changes with StatReloader
+INFO 2026-04-21 16:16:53,063 autoreload /app/apps/mercancia/views.py changed, reloading.
+INFO 2026-04-21 16:16:54,035 autoreload Watching for file changes with StatReloader
+INFO 2026-04-21 16:32:31,459 log "GET /verCarrito/ HTTP/1.1" 200 6881
+WARNING 2026-04-21 16:32:31,523 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-21 16:32:31,553 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-21 16:32:31,565 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-21 16:32:35,159 log "GET /verCarrito/ HTTP/1.1" 200 6881
+WARNING 2026-04-21 16:32:35,200 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-21 16:32:35,219 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-21 16:32:35,237 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-21 16:32:35,790 log "GET /verCarrito/ HTTP/1.1" 200 6881
+WARNING 2026-04-21 16:32:35,825 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-21 16:32:35,857 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-21 16:32:35,869 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+WARNING 2026-04-21 16:32:40,478 log "GET /static/vendor/bootstrap/bootstrap.min.css.map HTTP/1.1" 404 1928
+INFO 2026-04-21 16:32:45,723 log "GET /verCarrito/ HTTP/1.1" 200 6881
+WARNING 2026-04-21 16:32:45,779 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-21 16:32:45,804 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-21 16:32:45,806 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-21 16:33:35,157 log "GET /verCarrito/ HTTP/1.1" 200 6881
+INFO 2026-04-21 16:33:35,307 log "GET /static/css/style.css HTTP/1.1" 200 6181
+INFO 2026-04-21 16:33:35,359 log "GET /static/js/main.js HTTP/1.1" 200 233
+INFO 2026-04-21 16:33:35,365 log "GET /static/js/carrito.js HTTP/1.1" 200 8724
+INFO 2026-04-21 16:33:35,372 log "GET /static/css/all.min.css HTTP/1.1" 200 102526
+INFO 2026-04-21 16:33:35,409 log "GET /static/vendor/bootstrap/bootstrap.min.css HTTP/1.1" 200 232948
+INFO 2026-04-21 16:33:35,414 log "GET /static/js/bootstrap.bundle.min.js HTTP/1.1" 200 80663
+INFO 2026-04-21 16:33:35,444 log "GET /media/productos/pullo.jpg HTTP/1.1" 200 9406
+WARNING 2026-04-21 16:33:35,454 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-21 16:33:35,471 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-21 16:33:35,474 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+WARNING 2026-04-21 16:33:35,525 log Not Found: /favicon.ico
+WARNING 2026-04-21 16:33:35,526 log "GET /favicon.ico HTTP/1.1" 404 5460
+INFO 2026-04-21 16:33:45,653 log "POST /finalizar_compra/ HTTP/1.1" 302 0
+INFO 2026-04-21 16:33:45,695 log "GET /listar/ HTTP/1.1" 200 5835
+INFO 2026-04-21 16:33:45,767 log "GET /static/css/style.css HTTP/1.1" 304 0
+WARNING 2026-04-21 16:33:45,810 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-21 16:33:45,825 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-21 16:33:45,833 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-22 13:14:37,591 autoreload Watching for file changes with StatReloader
+INFO 2026-04-22 13:15:15,034 log "GET /listar/ HTTP/1.1" 200 5531
+INFO 2026-04-22 13:15:15,157 log "GET /static/css/style.css HTTP/1.1" 304 0
+WARNING 2026-04-22 13:15:15,191 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+INFO 2026-04-22 13:15:15,200 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+WARNING 2026-04-22 13:15:15,215 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-22 13:41:19,670 autoreload /app/config/settings.py changed, reloading.
+INFO 2026-04-22 13:41:21,769 autoreload Watching for file changes with StatReloader
+INFO 2026-04-22 13:41:24,368 autoreload /app/config/settings.py changed, reloading.
+ERROR 2026-04-22 17:19:21,575 log Internal Server Error: /ajax/agregar-carrito/
+Traceback (most recent call last):
+  File "C:\Users\liana\Sublemacion\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\liana\Sublemacion\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\liana\Sublemacion\apps\mercancia\views.py", line 131, in agregar_carrito_ajax
+    pedido, _ = Pedido.objects.get_or_create(**filtros_pedido)
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\liana\Sublemacion\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\liana\Sublemacion\venv\Lib\site-packages\django\db\models\query.py", line 987, in get_or_create
+    return self.get(**kwargs), False
+           ~~~~~~~~^^^^^^^^^^
+  File "C:\Users\liana\Sublemacion\venv\Lib\site-packages\django\db\models\query.py", line 635, in get
+    num = len(clone)
+  File "C:\Users\liana\Sublemacion\venv\Lib\site-packages\django\db\models\query.py", line 372, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\liana\Sublemacion\venv\Lib\site-packages\django\db\models\query.py", line 2000, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\liana\Sublemacion\venv\Lib\site-packages\django\db\models\query.py", line 95, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\liana\Sublemacion\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1622, in execute_sql
+    cursor = self.connection.cursor()
+  File "C:\Users\liana\Sublemacion\venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\liana\Sublemacion\venv\Lib\site-packages\django\db\backends\base\base.py", line 320, in cursor
+    return self._cursor()
+           ~~~~~~~~~~~~^^
+  File "C:\Users\liana\Sublemacion\venv\Lib\site-packages\django\db\backends\base\base.py", line 296, in _cursor
+    self.ensure_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\liana\Sublemacion\venv\Lib\site-packages\pytest_django\plugin.py", line 881, in _blocking_wrapper
+    raise RuntimeError(
+    ...<3 lines>...
+    )
+RuntimeError: Database access not allowed, use the "django_db" mark, or the "db" or "transactional_db" fixtures to enable it.

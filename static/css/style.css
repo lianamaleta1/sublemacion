@@ -433,3 +433,49 @@ text-decoration:none;
 .carrito-resumen form{
 margin:0;
 }
+
+.checkout-panel{
+background:#f5f7fb;
+border:1px solid #dbe3ee;
+border-radius:10px;
+padding:12px;
+margin-bottom:12px;
+}
+
+.checkout-panel label{
+display:block;
+font-size:14px;
+margin-bottom:6px;
+}
+
+.checkout-panel select{
+width:100%;
+padding:9px 10px;
+border:1px solid #ced4da;
+border-radius:8px;
+margin-bottom:12px;
+}
+
+.checkout-actions{
+display:flex;
+gap:8px;
+}
+
+.btn-pagar,
+.btn-cancelar{
+border:none;
+border-radius:8px;
+padding:10px 12px;
+font-weight:600;
+flex:1;
+}
+
+.btn-pagar{
+background:#198754;
+color:#fff;
+}
+
+.btn-cancelar{
+background:#6c757d;
+color:#fff;
+}

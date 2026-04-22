@@ -4,6 +4,7 @@ from django.core.paginator import Paginator
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import logging
+from django.contrib import messages
 # Create your views here.
 
 logger=logging.getLogger('mercancia')
@@ -210,18 +211,26 @@ def eliminar_item_carrito(request, producto_id):
 
     return redirect("verCarrito")
 
+
 def finalizar_compra(request):
-    pedido = _obtener_pedido_activo(request)
-    if not pedido:
+    if request.method != "POST":
         return redirect("verCarrito")
 
-    items = pedido.items.all()
-    total = sum(item.subtotal() for item in items)
+    pedido = _obtener_pedido_activo(request)
+    if not pedido:
+        messages.warning(request, "No tienes productos en el carrito.")
+        return redirect("verCarrito")
 
-    if request.method == "POST":
-        pedido.metodo_pago = request.POST.get("metodo_pago", "")
-        pedido.estado = "P"
-        pedido.save()
-        return redirect("listar_productos")
+    metodo_pago = request.POST.get("metodo_pago", "")
+    metodos_validos = {"rusia", "internacional"}
+    if metodo_pago not in metodos_validos:
+        messages.error(request, "Selecciona un método de pago válido.")
+        return redirect("verCarrito")
 
-    return render(request, "mercancia/pago.html", {"total": total, "items": items})
+    pedido.metodo_pago = metodo_pago
+    pedido.estado = "L"
+    pedido.save()
+    messages.success(request, "✅ Compra realizada con éxito. ¡Gracias por tu pedido!")
+    return redirect("listar_productos")
+
+

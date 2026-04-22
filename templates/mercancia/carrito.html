@@ -23,7 +23,7 @@
 
                     <div class="carrito-item-info">
                         <h3>{{ item.producto.nombre }}</h3>
-                        <p class="carrito-ref">Ref: {{ item.producto.id }}</p>
+                        
                         <div class="carrito-cantidad">
                             <span class="etiqueta">Cantidad</span>
                             <div class="carrito-cantidad-control">
@@ -41,10 +41,6 @@
                             </div>
                         </div>
 
-                        <div class="carrito-cantidad">
-                            <span class="etiqueta">Cantidad</span>
-                            <span class="valor">{{ item.cantidad }}</span>
-                        </div>
 
                         <p class="carrito-precio">Precio unitario: ${{ item.producto.precio }}</p>
                     </div>
@@ -59,10 +55,6 @@
                    
             </div>
 
-                    <div class="carrito-item-subtotal">
-                        <span>Subtotal</span>
-                        <strong>${{ item.subtotal }}</strong>
-                    </div>
                 </article>
                 {% endfor %}
             </div>
@@ -82,9 +74,24 @@
                     <span>Total</span>
                     <strong>${{ total }}</strong>
                 </div>
-                <form action="{% url 'finalizar_compra' %}" method="get">
-                    <button class="btn-resumen">Finalizar compra</button>
-                </form>
+                
+                    <button type="button" class="btn-resumen" id="btn-finalizar-compra">Finalizar compra</button>
+
+                     <div id="checkout-panel" class="checkout-panel d-none">
+                    <form method="post" action="{% url 'finalizar_compra' %}">
+                        {% csrf_token %}
+                        <label for="metodo_pago">Método de pago</label>
+                        <select name="metodo_pago" id="metodo_pago" required>
+                            <option value="rusia">Tarjeta Rusia</option>
+                            <option value="internacional">Tarjeta Internacional</option>
+                        </select>
+
+                        <div class="checkout-actions">
+                            <button type="submit" class="btn-pagar">Pagar ahora</button>
+                            <button type="button" class="btn-cancelar" id="btn-cancelar-compra">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
                 
                 <a href="{% url 'listar_productos' %}" class="btn-seguir">Seguir comprando</a>
             </aside>
@@ -97,4 +104,26 @@
         </div>
         {% endif %}
     </div>
+</section>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const btnFinalizar = document.getElementById("btn-finalizar-compra");
+    const btnCancelar = document.getElementById("btn-cancelar-compra");
+    const panel = document.getElementById("checkout-panel");
+
+    if (!btnFinalizar || !panel) return;
+
+    btnFinalizar.addEventListener("click", function () {
+        panel.classList.remove("d-none");
+        btnFinalizar.classList.add("d-none");
+    });
+
+    if (btnCancelar) {
+        btnCancelar.addEventListener("click", function () {
+            panel.classList.add("d-none");
+            btnFinalizar.classList.remove("d-none");
+        });
+    }
+});
+</script>
 {% endblock %}
