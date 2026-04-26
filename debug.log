@@ -1117,3 +1117,8 @@ INFO 2026-04-26 11:19:22,701 log "GET /static/js/bootstrap.bundle.min.js HTTP/1.
 WARNING 2026-04-26 11:19:22,720 log Not Found: /favicon.ico
 WARNING 2026-04-26 11:19:22,722 log "GET /favicon.ico HTTP/1.1" 404 5460
 INFO 2026-04-26 11:19:22,741 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-26 12:30:16,030 autoreload /app/config/settings.py changed, reloading.
+INFO 2026-04-26 12:30:16,892 autoreload Watching for file changes with StatReloader
+INFO 2026-04-26 12:30:18,200 autoreload /app/config/settings.py changed, reloading.
+INFO 2026-04-26 12:30:18,835 autoreload Watching for file changes with StatReloader
+INFO 2026-04-26 13:03:42,331 autoreload Watching for file changes with StatReloader
