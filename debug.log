@@ -1122,3 +1122,33 @@ INFO 2026-04-26 12:30:16,892 autoreload Watching for file changes with StatReloa
 INFO 2026-04-26 12:30:18,200 autoreload /app/config/settings.py changed, reloading.
 INFO 2026-04-26 12:30:18,835 autoreload Watching for file changes with StatReloader
 INFO 2026-04-26 13:03:42,331 autoreload Watching for file changes with StatReloader
+INFO 2026-04-26 14:57:52,515 autoreload Watching for file changes with StatReloader
+INFO 2026-04-26 15:47:52,514 log "GET /listar/ HTTP/1.1" 200 5531
+WARNING 2026-04-26 15:47:52,567 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-26 15:47:52,592 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-26 15:47:52,603 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-26 15:56:20,295 autoreload /app/apps/mercancia/models.py changed, reloading.
+INFO 2026-04-26 15:56:21,038 autoreload Watching for file changes with StatReloader
+INFO 2026-04-26 15:56:23,584 autoreload /app/apps/mercancia/models.py changed, reloading.
+INFO 2026-04-26 15:56:24,192 autoreload Watching for file changes with StatReloader
+INFO 2026-04-26 16:01:33,380 log "GET /verCarrito/ HTTP/1.1" 200 2836
+WARNING 2026-04-26 16:01:33,439 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-26 16:01:33,463 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-26 16:01:33,480 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-26 16:14:15,044 autoreload /app/apps/mercancia/models.py changed, reloading.
+INFO 2026-04-26 16:14:15,654 autoreload Watching for file changes with StatReloader
+INFO 2026-04-26 16:14:19,255 autoreload /app/apps/mercancia/models.py changed, reloading.
+INFO 2026-04-26 16:14:19,832 autoreload Watching for file changes with StatReloader
+INFO 2026-04-26 16:14:25,283 autoreload /app/apps/mercancia/models.py changed, reloading.
+INFO 2026-04-26 16:14:25,765 autoreload Watching for file changes with StatReloader
+INFO 2026-04-26 16:14:38,695 autoreload /app/apps/mercancia/models.py changed, reloading.
+INFO 2026-04-26 16:14:39,326 autoreload Watching for file changes with StatReloader
+INFO 2026-04-26 16:23:10,532 log "GET /listar/ HTTP/1.1" 200 5531
+WARNING 2026-04-26 16:23:10,603 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-26 16:23:10,620 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-26 16:23:10,627 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-26 16:23:12,385 log "POST /ajax/agregar-carrito/ HTTP/1.1" 200 35
+INFO 2026-04-26 16:23:13,713 log "GET /verCarrito/ HTTP/1.1" 200 6881
+WARNING 2026-04-26 16:23:13,762 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-26 16:23:13,785 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-26 16:23:13,789 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35

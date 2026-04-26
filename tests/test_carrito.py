@@ -3,7 +3,7 @@ import json
 import pytest
 from django.urls import reverse
 
-from apps.mercancia.models import Pedido, PedidoItem, Producto
+from apps.mercancia.models import PedidoItem, Producto, Pedido
 from apps.mercancia.views import MAX_CANTIDAD_POR_PRODUCTO
 
 

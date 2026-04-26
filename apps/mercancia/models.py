@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils import timezone
 
 
 # Create your models here.
@@ -16,7 +17,7 @@ class Pedido(models.Model):
     detalle = models.CharField(max_length=30, blank=True)
     estado = models.CharField(max_length=1, choices=choice_estado)
     metodo_pago = models.CharField(max_length=30, blank=True)  # revisit payment method
-    fecha_y_hora_creacion =models.DateTimeField(blank=True,null=True )
+    fecha_y_hora_creacion =models.DateTimeField(auto_now_add=True)
     actualizacion=models.DateField(blank=True,null=True)
     #se guarda los nueros de transaccion como ID paypal,ID  de strip
     referencia_pago=models.CharField(max_length=255,blank=True,null=True) 
