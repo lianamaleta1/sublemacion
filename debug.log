@@ -1152,3 +1152,180 @@ INFO 2026-04-26 16:23:13,713 log "GET /verCarrito/ HTTP/1.1" 200 6881
 WARNING 2026-04-26 16:23:13,762 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
 WARNING 2026-04-26 16:23:13,785 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
 INFO 2026-04-26 16:23:13,789 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-27 14:33:55,758 autoreload Watching for file changes with StatReloader
+WARNING 2026-04-27 14:52:30,505 log Bad Request: /ajax/agregar-carrito/
+INFO 2026-04-27 14:52:57,008 autoreload /app/apps/mercancia/views.py changed, reloading.
+INFO 2026-04-27 14:52:57,759 autoreload Watching for file changes with StatReloader
+WARNING 2026-04-27 15:16:36,600 log Bad Request: /ajax/agregar-carrito/
+WARNING 2026-04-27 15:17:39,177 log Bad Request: /ajax/agregar-carrito/
+WARNING 2026-04-27 15:34:19,562 log Bad Request: /ajax/agregar-carrito/
+WARNING 2026-04-27 15:35:25,253 log Bad Request: /ajax/agregar-carrito/
+WARNING 2026-04-27 15:36:11,649 log Bad Request: /ajax/agregar-carrito/
+WARNING 2026-04-27 15:37:04,729 log Bad Request: /ajax/agregar-carrito/
+INFO 2026-04-27 15:51:59,388 log "GET /listar/ HTTP/1.1" 200 5537
+INFO 2026-04-27 15:51:59,436 log "GET /static/css/style.css HTTP/1.1" 304 0
+WARNING 2026-04-27 15:51:59,516 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-27 15:51:59,527 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-27 15:51:59,527 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-27 15:52:49,751 log "GET /verCarrito/ HTTP/1.1" 200 6881
+WARNING 2026-04-27 15:52:49,804 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-27 15:52:49,829 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-27 15:52:49,846 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-27 16:01:43,510 log "GET /listar/ HTTP/1.1" 200 5531
+WARNING 2026-04-27 16:01:43,568 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-27 16:01:43,585 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-27 16:01:43,604 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-27 16:01:51,320 log "POST /ajax/agregar-carrito/ HTTP/1.1" 200 35
+WARNING 2026-04-27 16:02:23,221 log Not Found: /admih/
+WARNING 2026-04-27 16:02:23,222 log "GET /admih/ HTTP/1.1" 404 5445
+INFO 2026-04-27 16:02:28,833 log "GET /admin/ HTTP/1.1" 200 13001
+INFO 2026-04-27 16:02:28,901 log "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 978
+INFO 2026-04-27 16:02:28,902 log "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 593
+INFO 2026-04-27 16:02:33,673 log "GET /admin/mercancia/pedido/ HTTP/1.1" 200 11332
+INFO 2026-04-27 16:02:33,736 log "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2026-04-27 16:02:33,737 log "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2026-04-27 16:02:33,738 log "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2026-04-27 16:02:33,738 log "GET /static/admin/css/changelists.css HTTP/1.1" 200 7498
+INFO 2026-04-27 16:02:33,746 log "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2026-04-27 16:02:33,751 log "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2026-04-27 16:02:33,753 log "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2026-04-27 16:02:33,757 log "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2026-04-27 16:02:33,763 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:02:33,764 log "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2026-04-27 16:02:33,767 log "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2026-04-27 16:02:33,803 log "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 593
+INFO 2026-04-27 16:02:38,395 log "GET /admin/mercancia/pedidoitem/ HTTP/1.1" 200 11408
+INFO 2026-04-27 16:02:38,453 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:04:07,101 log "POST /ajax/agregar-carrito/ HTTP/1.1" 200 35
+INFO 2026-04-27 16:04:09,722 log "POST /ajax/agregar-carrito/ HTTP/1.1" 200 35
+INFO 2026-04-27 16:04:10,046 log "POST /ajax/agregar-carrito/ HTTP/1.1" 200 35
+INFO 2026-04-27 16:04:13,701 log "GET /admin/mercancia/pedidoitem/ HTTP/1.1" 200 11692
+INFO 2026-04-27 16:04:13,785 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:04:30,787 log "GET /admin/mercancia/pedido/ HTTP/1.1" 200 11332
+INFO 2026-04-27 16:04:30,836 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:04:38,256 log "GET /admin/mercancia/pedido/ HTTP/1.1" 200 11332
+INFO 2026-04-27 16:04:38,304 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:04:43,039 log "GET /admin/mercancia/pedidoitem/ HTTP/1.1" 200 11692
+INFO 2026-04-27 16:04:43,084 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:04:45,575 log "GET /admin/mercancia/pedido/ HTTP/1.1" 200 11332
+INFO 2026-04-27 16:04:45,620 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:04:49,459 log "GET /admin/mercancia/pedido/9/change/ HTTP/1.1" 200 16300
+INFO 2026-04-27 16:04:49,495 log "GET /static/admin/css/forms.css HTTP/1.1" 200 8817
+INFO 2026-04-27 16:04:49,495 log "GET /static/admin/js/calendar.js HTTP/1.1" 200 9159
+INFO 2026-04-27 16:04:49,496 log "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19698
+INFO 2026-04-27 16:04:49,505 log "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2026-04-27 16:04:49,506 log "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2026-04-27 16:04:49,509 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:04:49,540 log "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 928
+INFO 2026-04-27 16:04:49,543 log "GET /static/admin/css/widgets.css HTTP/1.1" 200 11811
+INFO 2026-04-27 16:04:49,616 log "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1112
+INFO 2026-04-27 16:04:59,069 log "GET /admin/mercancia/pedido/9/delete/ HTTP/1.1" 200 9971
+INFO 2026-04-27 16:04:59,103 log "GET /static/admin/js/cancel.js HTTP/1.1" 200 884
+INFO 2026-04-27 16:05:10,727 log "POST /admin/mercancia/pedido/9/delete/ HTTP/1.1" 302 0
+INFO 2026-04-27 16:05:10,750 log "GET /admin/mercancia/pedido/ HTTP/1.1" 200 10179
+INFO 2026-04-27 16:05:10,791 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:05:10,811 log "GET /static/admin/img/icon-yes-dark.svg HTTP/1.1" 200 558
+INFO 2026-04-27 16:05:20,628 log "GET /admin/mercancia/producto/ HTTP/1.1" 200 11640
+INFO 2026-04-27 16:05:20,666 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:05:23,333 log "GET /admin/mercancia/pedidoitem/ HTTP/1.1" 200 10056
+INFO 2026-04-27 16:05:23,399 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:05:25,713 log "GET /admin/mercancia/pedido/ HTTP/1.1" 200 10018
+INFO 2026-04-27 16:05:25,748 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:05:29,795 log "GET /admin/mercancia/pedidoitem/ HTTP/1.1" 200 10056
+INFO 2026-04-27 16:05:29,834 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:05:31,413 log "GET /admin/mercancia/productoimagen/ HTTP/1.1" 200 12402
+INFO 2026-04-27 16:05:31,460 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:05:38,746 log "GET /listar/ HTTP/1.1" 200 5531
+WARNING 2026-04-27 16:05:38,790 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-27 16:05:38,803 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-27 16:05:38,818 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-27 16:05:41,925 log "GET /verCarrito/ HTTP/1.1" 200 2836
+WARNING 2026-04-27 16:05:42,000 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-27 16:05:42,025 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-27 16:05:42,034 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-27 16:05:44,400 log "GET /listar/ HTTP/1.1" 200 5531
+WARNING 2026-04-27 16:05:44,455 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-27 16:05:44,472 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-27 16:05:44,484 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-27 16:05:48,468 log "POST /ajax/agregar-carrito/ HTTP/1.1" 200 35
+INFO 2026-04-27 16:05:54,842 log "GET /admin/mercancia/productoimagen/ HTTP/1.1" 200 12402
+INFO 2026-04-27 16:05:54,883 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:06:00,201 log "GET /admin/mercancia/pedido/ HTTP/1.1" 200 11334
+INFO 2026-04-27 16:06:00,258 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:06:02,044 log "GET /admin/mercancia/pedidoitem/ HTTP/1.1" 200 11376
+INFO 2026-04-27 16:06:02,097 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:06:06,713 log "GET /admin/mercancia/pedido/ HTTP/1.1" 200 11334
+INFO 2026-04-27 16:06:06,748 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:06:12,732 log "GET /admin/mercancia/pedidoitem/ HTTP/1.1" 200 11376
+INFO 2026-04-27 16:06:12,774 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:06:17,605 log "POST /ajax/agregar-carrito/ HTTP/1.1" 200 35
+INFO 2026-04-27 16:06:21,144 log "GET /admin/mercancia/pedidoitem/ HTTP/1.1" 200 11692
+INFO 2026-04-27 16:06:21,182 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:06:23,332 log "GET /admin/mercancia/pedido/ HTTP/1.1" 200 11334
+INFO 2026-04-27 16:06:23,380 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:06:28,720 log "GET /admin/mercancia/pedido/10/change/ HTTP/1.1" 200 16302
+INFO 2026-04-27 16:06:28,763 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:07:42,688 log "GET /admin/mercancia/ HTTP/1.1" 200 7471
+INFO 2026-04-27 16:07:49,821 log "POST /ajax/agregar-carrito/ HTTP/1.1" 200 35
+INFO 2026-04-27 16:07:51,488 log "POST /ajax/agregar-carrito/ HTTP/1.1" 200 35
+INFO 2026-04-27 16:07:54,385 log "GET /admin/mercancia/pedido/ HTTP/1.1" 200 11334
+INFO 2026-04-27 16:07:54,434 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:08:00,236 log "GET /admin/mercancia/pedidoitem/ HTTP/1.1" 200 10056
+INFO 2026-04-27 16:08:00,288 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:08:03,780 log "GET /admin/mercancia/pedido/ HTTP/1.1" 200 11334
+INFO 2026-04-27 16:08:03,824 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:08:05,271 log "GET /admin/mercancia/pedido/10/change/ HTTP/1.1" 200 16302
+INFO 2026-04-27 16:08:05,316 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:10:44,011 log "GET /listar/ HTTP/1.1" 200 5531
+WARNING 2026-04-27 16:10:44,063 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-27 16:10:44,084 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-27 16:10:44,100 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-27 16:10:46,418 log "GET /admin/mercancia/pedido/10/change/ HTTP/1.1" 200 16302
+INFO 2026-04-27 16:10:46,464 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:10:48,367 log "GET /admin/mercancia/pedido/ HTTP/1.1" 200 11334
+INFO 2026-04-27 16:10:51,916 log "GET /admin/mercancia/pedido/ HTTP/1.1" 200 11334
+INFO 2026-04-27 16:10:51,957 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:10:54,400 log "POST /ajax/agregar-carrito/ HTTP/1.1" 200 35
+INFO 2026-04-27 16:10:57,426 log "GET /admin/mercancia/pedido/ HTTP/1.1" 200 11334
+INFO 2026-04-27 16:10:57,465 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:11:00,852 log "GET /admin/mercancia/pedidoitem/ HTTP/1.1" 200 11408
+INFO 2026-04-27 16:11:00,896 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:11:03,789 log "GET /admin/mercancia/pedido/ HTTP/1.1" 200 11334
+INFO 2026-04-27 16:11:03,832 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:11:07,944 log "GET /verCarrito/ HTTP/1.1" 200 6881
+WARNING 2026-04-27 16:11:07,989 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-27 16:11:08,014 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-27 16:11:08,029 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-27 16:11:09,560 log "POST /eliminar_item_carrito/3/ HTTP/1.1" 302 0
+INFO 2026-04-27 16:11:09,580 log "GET /verCarrito/ HTTP/1.1" 200 2836
+WARNING 2026-04-27 16:11:09,617 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-27 16:11:09,636 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-27 16:11:09,649 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+INFO 2026-04-27 16:11:13,713 log "GET /admin/mercancia/pedidoitem/ HTTP/1.1" 200 10056
+INFO 2026-04-27 16:11:13,746 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:11:15,540 log "GET /admin/mercancia/pedido/ HTTP/1.1" 200 11334
+INFO 2026-04-27 16:11:15,584 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-27 16:11:17,794 log "GET /admin/mercancia/pedido/10/change/ HTTP/1.1" 200 16302
+INFO 2026-04-27 16:11:17,840 log "GET /admin/jsi18n/ HTTP/1.1" 200 8212
+INFO 2026-04-28 13:03:44,979 autoreload Watching for file changes with StatReloader
+INFO 2026-04-28 13:07:36,888 log "GET /listar/ HTTP/1.1" 200 5531
+INFO 2026-04-28 13:07:36,944 log "GET /static/js/carrito.js HTTP/1.1" 304 0
+INFO 2026-04-28 13:07:36,961 log "GET /static/css/style.css HTTP/1.1" 304 0
+WARNING 2026-04-28 13:07:36,992 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+INFO 2026-04-28 13:07:37,003 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+WARNING 2026-04-28 13:07:37,007 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-28 13:07:44,102 log "POST /ajax/agregar-carrito/ HTTP/1.1" 200 35
+INFO 2026-04-28 13:07:52,950 log "GET /verCarrito/ HTTP/1.1" 200 6881
+WARNING 2026-04-28 13:07:53,052 log "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 404 1898
+WARNING 2026-04-28 13:07:53,092 log "GET /static/webfonts/fa-brands-400.ttf HTTP/1.1" 404 1892
+INFO 2026-04-28 13:07:53,097 log "GET /vistaBasecarrito/ HTTP/1.1" 200 35
+WARNING 2026-04-28 13:40:48,983 log Bad Request: /ajax/agregar-carrito/
+INFO 2026-04-28 13:42:44,731 log "GET /admin/mercancia/pedido/10/change/ HTTP/1.1" 200 16302
+INFO 2026-04-28 13:42:44,886 log "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 593
+INFO 2026-04-28 13:42:44,887 log "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 978
+INFO 2026-04-28 13:42:44,887 log "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 928
+INFO 2026-04-28 13:42:45,032 log "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1112
+WARNING 2026-04-28 13:44:02,700 log Bad Request: /ajax/agregar-carrito/
+WARNING 2026-04-28 13:49:05,455 log Bad Request: /ajax/agregar-carrito/
+WARNING 2026-04-28 13:58:34,048 log Bad Request: /ajax/agregar-carrito/
+WARNING 2026-04-28 14:00:38,709 log Bad Request: /ajax/agregar-carrito/

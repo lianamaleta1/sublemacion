@@ -100,7 +100,6 @@ import json
   
 def agregar_carrito_ajax(request):
     if request.method == "POST":
-
        
         if (request.content_type or "").startswith("application/json"):
             payload = json.loads(request.body or "{}")
